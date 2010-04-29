@@ -15,12 +15,22 @@ layout: nil
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
+{% for cat in site.categories %}
    <url>
-      <loc>{{site.url}}/archives/categories.html</loc>
+      <loc>{{site.url}}/categories/{{cat.first}}</loc>
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>1</priority>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
+{% endfor %}
+{% for tag in site.tags %}
+   <url>
+      <loc>{{site.url}}/tags/{{tag.first}}</loc>
+      <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+{% endfor %}
 {% for post in site.posts %}
    <url>
       <loc>{{site.url}}/{{ post.url }}</loc>
