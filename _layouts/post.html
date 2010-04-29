@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article> 
+  <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2> 
+  <details><a href="http://www.cavigneaux.net">Nico</a> on {{ page.date | date_to_string }} - {{ page.categories | array_to_sentence_string | capitalize }}</details> 
+
+  {% if page.tags != empty %}
+  <ul class="post-tags">
+    {% for tag in page.tags %}
+      <li>{{ tag }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="post-content">{{ content }}</div> 
+
+  <section id="comments">
+    <p><a href="{{ page.url }}#disqus_thread">View Comments</a></p>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://bounga.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</a></noscript>
+  </section>
+</article>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Nicolas Cavigneaux" />
+  <meta name="copyright" content="Nicolas Cavigneaux" />
+  <meta name="description" content="Nicolas Cavigneaux's Blog : Free Softwares, Unix, Mac OS X, Ruby, Rails, Mootools and Objective C" />
+
+  <meta name="date" scheme="ISO8601" content="{{ site.time | date_to_xmlschema }}" /> 
+
+  <link rel="contents" title="Archives" href="http://www.bounga.org/archive" /> 
+  <link rel="section" href="http://www.bounga.org/category/General" title="Général" />
+
+  <title>{{ page.title }} - {{ site.name }}</title>
+
+  <link href="/posts.xml" rel="alternate" title="Bounga's ATOM Feed" type="application/atom+xml" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" /> 
+  <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/stylesheets/code.css" type="text/css" />
+  <link rel="stylesheet" href="/stylesheets/socializer.css" type="text/css" media="all" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/mooSocialize.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <div id="page"> 
+    <header> 
+      <h1><a href="{{ site.url }}">{{ site.name }}</a></h1> 
+    </header> 
+
+    <div id="wrapper"> 
+      <section id="main"> 
+        {{ content }}
+      </section> 
+
+      <aside> 
+          <nav id="search">
+            <h2><label for="q">Search</label></h2>
+            <form action="http://www.google.com/cse">
+              <fieldset>
+                <p>
+                  <input type="search" id="q" name="q" placeholder="Type your keywords" />
+                  <input type="hidden" name="cx" value="014500678063080222450:6akmbxovczi">
+                  <input type="hidden" name="ie" value="UTF-8">
+                  <input class="submit" name="sa" type="submit" value="ok" />
+                </p>
+              </fieldset>
+            </form>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+          </nav>
+          
+          <h2>Share</h2>
+          <p><img src="/images/mooSocialize/my_socializer.gif" class="socializer" /></p>
+          
+          {% if site.related_posts != null %}
+          <h2>Related posts</h2>
+          <ul>
+            {% for post in site.related_posts limit:5 %}
+              {% if post.url != page.url %}
+              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% endif %}
+          
+          <h2>Categories</h2>
+          <ul>
+            {% for category in site.categories %}
+            <li><a href="{{ site.url}}/categories/{{ category.first }}">{{ category.first | capitalize }}</a> ({{ category.last.size }})</li>
+            {% endfor %}
+            <li><a href="{{ site.url}}/archive">Archives</a></li>
+          </ul>
+          
+          <nav class="tags">
+            <h2>Tags</h2>
+            <ul>
+              {% include tags.html %}
+            </ul>
+          </nav>
+          
+          <nav>
+            <h2>Links</h2>
+            <ul>
+              <li><a href="http://www.cavigneaux.net" title="My resume">Resume</a></li>
+              <li><a href="http://www.bitbucket.org/Bounga/" title="Plugins, libs, softs, docs, …">Bounga @ BitBucket</a></li> 
+              <li><a href="http://www.twitter.com/Bounga" title="My tweets">Bounga @ Twitter</a></li> 
+              <li><a href="http://www.workingwithrails.com/person/6667-nicolas-cavigneaux" title="My profile on Working with Rails">Bounga @ WWR</a></li> 
+            </ul> 
+          </nav>
+          
+          <nav class="syndicate">
+            <h2>Atom Feed</h2>
+            <ul>
+              <li><a type="application/atom+xml" href="{{ site.url }}/articles.atom" title="Atom feed for blog posts" class="feed">Blog posts</a></li>
+          </nav>
+      </aside>
+    </div>
+    <footer>
+      <p>© <a href="http://www.cavigneaux.net/">Nicolas Cavigneaux</a> 2010.</p>
+      <p>
+        Source of this site on <a href="http://www.bitbucket.org/Bounga/blog">BitBucket</a>.
+        Contact me at <a href="mailto:nico@bounga.org">nico@bounga.org</a>. 
+      </p>
+      <p>
+        <a href="/posts.xml">ATOM</a> &brvbar;
+        <a href="htt://validator.w3.org/check/referer">HTML5</a> &brvbar;
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &brvbar;
+        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">CC</a>
+      </p>
+    </footer>
+  </div>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-915737-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
+
+      <!-- Comment count code from disqus -->
+      <script type="text/javascript">
+      //<![CDATA[
+      (function() {
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for(var i = 0; i < links.length; i++) {
+          if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/bounga/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+        //]]>
+        </script> 
+</body>
+</html>

@@ -1,0 +1,26 @@
+---
+layout: default 
+title: Archives
+---
+<section id="archives">
+  <h2>{{ page.title }}</h2>
+  {% for post in site.posts %}
+    {% if post.date|date:"%Y" != previous_post.date|date:"%Y" %}
+      {% assign year_changed = true %}
+    {% else %}
+       {% assign year_changed = false %}
+    {% endif %}
+      
+    {% if year_changed %}
+    {% if forloop.index != 1 %}
+    </ul>
+    {% endif %}
+    <h3>{{ post.date | date:"%Y" }}</h3>
+    <ul>
+    {% endif %}
+     
+    <li>{{ post.date | date:"%b %d" }} - <a href="{{ post.url }}">{{ post.title }}</a></li>
+
+    {% assign previous_post = post %}
+  {% endfor %}
+</section>

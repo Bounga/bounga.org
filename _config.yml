@@ -1,0 +1,8 @@
+lsi: true
+pygments: true
+permalink: pretty
+paginate: 5
+auto: true
+url: http://www.bounga.org
+name: Bounga's Home
+exclude: ['README', 'Rakefile']
