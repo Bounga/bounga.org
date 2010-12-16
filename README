@@ -12,6 +12,7 @@ The source is hosted on [BitBucket][5].
 The following directories/files and their contents are under the [Creative Commons BY-NC-SA 3.0][3] (c) 2010 Nicolas Cavigneaux.
 
 - _posts/
+- _drafts/
 - images/
 - *.markdown
 - *.html
