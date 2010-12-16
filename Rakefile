@@ -3,8 +3,8 @@ require 'jekyll'
 include Jekyll::Filters
 
 HOST = "www.bounga.org"
-REMOTE_USER = "prod"
-REMOTE_DIRECTORY = "/home/prod/www/bounga"
+REMOTE_USER = "nico"
+REMOTE_DIRECTORY = "/home/nico/www/bounga.org"
 
 desc 'Generate category pages'
 task :categories do

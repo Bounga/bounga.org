@@ -3,12 +3,12 @@ layout: default
 ---
 <article> 
   <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2> 
-  <details><a href="http://www.cavigneaux.net">Nico</a> on {{ page.date | date_to_string }} - {{ page.categories | array_to_sentence_string | capitalize }}</details> 
+  <details><a href="http://www.cavigneaux.net">Nicolas Cavigneaux</a> on {{ page.date | date_to_string }} in {{ page.categories | array_to_sentence_string | capitalize }}</details> 
 
   {% if page.tags != empty %}
   <ul class="post-tags">
     {% for tag in page.tags %}
-      <li>{{ tag }}</li>
+      <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}
