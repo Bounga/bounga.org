@@ -30,10 +30,11 @@ title: Ruby Ninja
 
 {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a href="/">Newer &raquo;</a>
+        {% assign link = "/" %}
     {% else %}
-    <a href="/page{{ paginator.previous_page }}">Newer &raquo;</a>
+        {% assign link = "/page" + paginator.previous_page %}
     {% endif %}
+    <a href="{{ link }}">Newer &raquo;</a>
 {% endif %}
 </nav>
 {% endif %}
