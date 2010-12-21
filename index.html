@@ -17,7 +17,7 @@ title: Ruby Ninja
   </ul>
   {% endif %}
 
-  <div class="post-content">{{ post.content | strip_html | newline_to_br | truncatewords: 50 }}</div> 
+  <div class="post-content">{{ post.content | strip_html | truncate: 300 | newline_to_br }}</div> 
   <p class="read-it"><a href="{{ post.url }}">Read more</a>...</p> 
 </article>
 {% endfor %}
