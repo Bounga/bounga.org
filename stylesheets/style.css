@@ -344,8 +344,23 @@ a.feed {
 	padding: 0 5px;
 	border-left: 4px solid #bfbfbf;
 }
- 
- 
+
+.post-content h1, .post-content h2, .post-content h3 {
+	color: #369;
+}
+
+.post-content h1 {
+	font-size: 1.7em;
+}
+
+.post-content h2 {
+	font-size: 1.5em;
+}
+
+.post-content h3 {
+	font-size: 1.2em;
+}
+
 #attachments h3 {
 	font-size: 1.2em;
 }
