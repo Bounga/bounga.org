@@ -54,7 +54,7 @@
           <h2>Share</h2>
           <p><img src="/images/mooSocialize/my_socializer.gif" class="socializer" /></p>
           
-          {% if !site.related_posts.empty? %}
+          {% if site.related_posts != empty %}
           <h2>Related posts</h2>
           <ul>
             {% for post in site.related_posts limit:5 %}
