@@ -49,7 +49,7 @@ I'm working for [Synbioz](http://www.synbioz.com) since May 2010. They offered m
 
 At Synbioz we're building Web Apps for various kind of customers. We're using Ruby every day and all the cool things available in this eco-system (Rails, Sinatra, MacRuby, …).
 
-As you can figure out we're big fans of Ruby and open source in general. Working on our projects is not really a job but it's much more about having fun, discovering new top notch technologies and building evolutive, consistent and robust softwares.
+As you can figure out we're big fans of Ruby and open source in general. Working on our projects is not really a job but it's much more about having fun, discovering new top notch technologies and building evolutive, consistent and robust softwares. If you need some resources for your project we'll be very please to hear from you and help you!
 
 So now I've got a fast server serving my website pages. I really want to thank you [Martin](http://twitter.com/#!/_fuse)!
 
