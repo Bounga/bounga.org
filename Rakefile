@@ -101,6 +101,6 @@ desc 'Deploy site on web server'
 task :deploy => [:build] do
   puts "Deploying files on Web server"
   system("ssh #{REMOTE_USER}@#{HOST} 'cd \"#{REMOTE_DIRECTORY}\" && rm -rf ./* && rm -rf ./.*'")
-  system("scp -r _site #{REMOTE_USER}@#{HOST}:#{REMOTE_DIRECTORY}")
+  system("scp -r _site/* #{REMOTE_USER}@#{HOST}:#{REMOTE_DIRECTORY}")
   puts "Deployment done!"
 end
