@@ -7,7 +7,7 @@ title: Ruby Ninja
 <article> 
   <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
   <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2> 
-  <details><a href="http://www.cavigneaux.net">Nico</a> on {{ post.date | date_to_string }} - {{ post.categories | array_to_sentence_string | capitalize }}</details> 
+  <details><a href="http://www.cavigneaux.net">Nicolas Cavigneaux</a> on {{ post.date | date_to_string }} - {{ post.categories | array_to_sentence_string | capitalize }}</details> 
 
   {% if post.tags != empty %}
   <ul class="post-tags">
