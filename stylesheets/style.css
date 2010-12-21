@@ -114,7 +114,7 @@ footer p {
 	text-align: center;
 	font-size: 1.2em;
 }
-footer p a {
+footer p a, footer p a:visited {
 	color: #6d8824;
 }
  
