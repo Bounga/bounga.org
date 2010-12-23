@@ -14,6 +14,8 @@ Most of you, English readers, don't know me because I was blogging in French bef
 
 Maybe you're wondering why I stopped blogging in French? Writing in French is cool since it's my mother tongue and because there's not much resources in French. But writing in English has many pros — much more people can read my posts and as a consequence I'll probably have more feedbacks on my thoughts, choices and my open-source projects. IMHO it's a really good reason to switch my blog language, I mean I really love what I do and I like when I have feedbacks (good or bad) on it, ideas to improve my style or my softwares. There's many many more developers speaking English than developers speaking French so that's the deal if I want to have some visibility in communities.
 
+And yes I know my english is sloppy but it's a good way for me to pratice and improve my skill.
+
 Jekyll powered
 ==============
 
