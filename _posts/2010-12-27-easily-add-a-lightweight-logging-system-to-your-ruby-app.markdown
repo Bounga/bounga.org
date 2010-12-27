@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Easily add lightweight logging system to your Ruby app
+title: Easily add a lightweight logging system to your Ruby app
 category: ruby
 tags: ['ruby', 'debug', 'tips', 'logging']
 ---
