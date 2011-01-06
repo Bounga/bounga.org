@@ -5,94 +5,97 @@ category: ruby
 tags: ['ruby', 'tips']
 ---
 
-<div class="post">
-<h2 id="p104" class="post-title">Ruby : encapsuler un bloc de code dans un objet</h2>
+Ruby is a very dynamic language and it allows you to do things like encapsulate a piece of code in an object. This is a really powerful trick since your code becomes usable in many places regarding the context. To sum this up we can compare this to Ruby blocks but embed in an object.
 
-<p class="post-info">Par <a href="http://www.cavigneaux.net">Bounga</a>    le dimanche,  7 janvier 2007, 20:29        - <a href="../../../../../category/Documentations/index.html">Documentations</a>
-    - <a href="index.html">Lien permanent</a>
-</p>
-
-
-
-      <div class="post-excerpt"><p>En <a href="http://www.ruby-lang.org">Ruby</a>, il est possible d'encapsuler un morceau de code dans un objet. Grâce à cela, il vous est possible d'utiliser ce même morceau de code à plusieurs endroits ou encore d'exécuter un morceau de code donné en fonction du contexte courant. En somme, toute la puissance des blocs embarqués dans un objet.</p>
-
-<p>Cette possibilité est offerte par les objets de type <code>Proc</code>. Nous essayerons de voir dans ce billet comment mettre à profit l'utilisation des <code>Proc</code> pour simplifier votre code et le rendre un peu plus dynamique.</p></div>
+To use this you need to create a `Proc` object. We'll try to see in this post how we can use `Proc` to simplify our code and makes it more dynamic.
     
-<div class="post-content"><h2>Comment créer un Proc ?</h2>
+How to create a Proc?
+=======================
 
-<p>Rien de plus simple :</p>
+Easy as a pie!
 
-<p>
-<pre>
-proc = Proc.new { |x| puts "Le paramètre est #{x}" }
-proc.call('test') # => Le paramètre est test
-</pre>
-</p>
+{{ highlight ruby}}
+proc = Proc.new { |x| puts "Parameter is #{x}" }
+proc.call('test') # => Parameter is test
+{{ endhighlight }}
 
-<p>On a donc ici créé une nouvelle instance de la classe <code>Proc</code> en utilisant la méthode <code>new</code> à laquelle on a passé un bloc de code qui sera utilisé lors de l'appel à la méthode <code>call</code>. Nous avons, au début de notre bloc, définie une variable qui pourra être affectée lors de l'appel et utilisée par notre bloc.</p>
+So we've created a new instance of the *Proc* class using the `new` method. This `new` method needs block wich will be use on each `Proc#call` method call. In this example, our block is waiting for a parameter that it will use after.
 
-<p>Il est également possible de créer des objets <code>Proc</code> de façon automatique dans les appels de méthode :</p>
+You can also create `Proc` objects on the fly in method calls:
 
-<p>
-<pre>
-def methode_avec_bloc(x, &amp;block)
-puts block.class
-x.times { |i| block[i, i*i] }
+{{ highlight ruby }}
+def method_using_a_block(x, &block)
+	puts block.class
+	x.times { |i| block.call[i, i*i] }
 end
+{{ endhighlight }}
 
-methode_avec_bloc(4) { |n, c| puts "Le carré de #{n} est #{c}" }
+Then we can call our method:
+
+{{ highlight irb }}
+method_using_a_block(4) { |n, s| puts "Square of #{n} is #{s}" }
 
 # => Proc
-# => Le carré de 0 est 0
-# => Le carré de 1 est 1
-# => Le carré de 2 est 4
-# => Le carré de 3 est 9
-</pre>
-</p>
+# => Square of 0 is 0
+# => Square of 1 is 1
+# => Square of 2 is 4
+# => Square of 3 is 9
+{{ endhighlight }}
 
-<p>On a donc définie une méthode qui prend deux paramètres, un entier et un bloc a exécuter. Notre méthode affiche la classe de notre bloc pour s'assurer que c'est bien un <code>Proc</code> qu'on manipule puis renvoit un entier et son carré au bloc de code <code>x</code> fois. Lorsque nous appelons notre méthode, nous lui passons en premier paramètre le nombre d'itérations à faire puis un bloc (manipulant deux paramètres) qui se charge de l'affichage.</p>
+We've defined a method which takes 2 parameters — an integer and a block. This method starts by printing our block class to be sure we're creating a `Proc` object. This block will be called `x` times and will be feed with current `x` value and it's square. In our case the code we use for the block only have a simple purpose, displaying a sentence explaining what is the square of a given number.
 
-<h2>Oui mais si je stocke déjà mon code dans un objet Proc ?</h2>
+Note that 
 
-<p>Il est également possible de passer directement un objet <code>Proc</code> à une méthode attendant un bloc en précédant son nom de variable par un &amp; :</p>
+{{ highlight ruby }}
+block.call[i, i*i]
+{{ endhighlight }}
 
-<p>
-<pre>
+could be shorten to
+
+{{ highlight ruby }}
+block[i, i*i]
+{{ endhighlight }}
+
+Yes but I already have a Proc object in a variable
+==================================================
+
+It's also possible to pass an existing `Proc` object to a method waiting for a block. The only thing you have to do is to use your variable prefixed by a & rather than using an inline block:
+
+{{ highlight irb }}
 proc = Proc.new { |n| puts n }
-3.times(&amp;proc)
+3.times(&proc)
 
 # => 0
 # => 1
 # => 2
-</pre>
-</p>
+{{ endhighlight }}
 
-<h2>Oui mais où sont les exemples utiles ?</h2>
+That's fun but is there real use case?
+======================================
 
-<p>Vous êtes exigeants en plus ! Bon d'accord &hellip; Disons que vous écrivez une application en <a href="http://www.rubyonrails.org">Rails</a> et qu'il vous faut pouvoir trier une liste d'articles par titre, auteur, identifiant décroissant ou par statut (publié ou non). L'utilisation des <code>Proc</code> pourrait bien vous simplifier la vie.</p>
+For sure! Let's say you're writing a Rails app and that you need to be able to sort your blog posts by title, author, descending id or by state (published / draft). Using `Proc` could really save your some time and code lines.
 
-<p>Vous pourriez par exemple utiliser le morceau de code suivant pour éviter les duplications :</p>
+Even if I know that sorting should be done at DB level for performance concerns, one of the possible implementation showing `Proc` usage is:
 
-<p>
-<pre>
+{{ highlight ruby }}
 def sort
-order = params[:order] || "id"
-proc = case order
-when "author" then lambda { |a| a.user.name.downcase }
-when "status", "title" then lambda { |a| a.send(order) }
-when "id" then lambda { |a| -a.id }
+	order = params[:order] || "id"
+	proc = case order
+	when "author" then lambda { |a| a.user.name.downcase }
+	when "status", "title" then lambda { |a| a.send(order) }
+	when "id" then lambda { |a| -a.id }
+	end
+
+	@articles = Article.all.sort_by &amp;proc
 end
-@articles = Article.find(:all).sort_by &amp;proc
-end
-</pre>
-</p>
+{{ endhighlight }}
 
-<p>Notre méthode <code>sort</code> définie une variable <code>order</code> qui contient le paramètre de tri (récupéré dans un formulaire), si aucun paramètre n'a été donné, l'id sera utilisé par défaut. Ensuite la variable <code>proc</code> se voit affecter l'un des trois <code>lambda</code> (un équivalent de <code>Proc</code>) en fonction de l'ordre demandé. Dans le cas où le paramètre de tri est l'auteur, on utilise le champ <code>name</code> en minuscules, pour le status et le titre, on utilise directement le champ en question, sans traitement. C'est pour cela qu'on utilise <code>send</code> qui nous évite de la duplication en appelant la méthode de façon dynamique. Si on fait un tri sur l'identifiant, il nous suffit de faire appel au champ en question en prenant soin de le trier en ordre inverse à l'aide du "-".</p>
+This action code is really easy to understand. First we're defining an *order* variable in which we'll store the sorting parameter that we've retrieved from POST or GET parameters. If there's no *order* parameter we'll use *id* by default.
 
-<p>Une fois la fonction de tri choisie, on recherche tous les articles disponibles puis on les trie en passant notre <code>Proc</code> à la méthode <code>sort_by</code> qui attend un bloc.</p>
+Then we populate the *proc* variable with a `lambda` acording to the requested order — *lambda* is in fact a specialized *Proc* object that checks if it has the good number of parameters. If the user wants to sort by author, we'll use downcased *name* attribute. If the sorting is based on the status or the title, we'll use the attribute without any further processing. We're using an `Object#send` call to avoid duplication and conditions. The corresponding method is called dynamicly. If user wants to sort based on descending id we just have to call the corresponding method the only thing to think of is to use a minus to sort in reverse order.
 
-<h2>Conclusion</h2>
+When we have the good `Proc` we use ActiveRecord capabilities to fetch all records and then we sort them using `Enumerable#sort_by` method wich take a block as its parameter to know how to sort the collection.
 
-<p>Ecrire ce genre de code n'a rien de spectaculaire mais vous permet d'écrire du code plus concis et plus évolutif. Les <code>Proc</code> peuvent être d'une aide très précieuse et vous permettront dans de nombreux cas de limiter le nombre de méthodes à écrire pour des actions quasiment identiques où seule une ou deux opérations de traitement varient.</p></div>
+This kind of code is not spectacular at all but I really think it can be useful in many cases. It leads to a shorter and more maintainable code. When you have a lot of duplication with small differences you really should think of `Proc` to keep your code DRY.
 
-  </div>
+For example I heavily used `Proc` for one of my console software Renamer. It can be a good study case for a better understanding of `Proc`
