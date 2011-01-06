@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="author" content="Nicolas Cavigneaux" />
   <meta name="copyright" content="Nicolas Cavigneaux" />
   <meta name="description" content="Nicolas Cavigneaux's Blog : Free Softwares, Unix, Mac OS X, Ruby, Rails, Mootools and Objective C" />
-
+  <meta name="keywords" content="Free Softwares, Unix, Mac OS X, Ruby, Rails, Mootools, Objective C" />
   <meta name="date" content="{{ site.time | date_to_xmlschema }}" /> 
+  <base href="/" />
 
   <link rel="contents" title="Archives" href="/archive" />
   {% for category in site.categories %}
@@ -16,9 +17,9 @@
   <title>{{ page.title }} - {{ site.name }}</title>
 
   <link href="/posts.xml" rel="alternate" title="Bounga's ATOM Feed" type="application/atom+xml" />
-  <link rel="icon" type="image/png" href="/images/favicon.png" /> 
+  <link rel="shortcut icon" type="image/png" href="/images/favicon.png" /> 
   <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="/stylesheets/code.css" type="text/css" />
+  <link rel="stylesheet" href="/stylesheets/code.css" type="text/css" media="all" />
   <link rel="stylesheet" href="/stylesheets/socializer.css" type="text/css" media="all" />
   
   <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js" type="text/javascript" charset="utf-8"></script>
