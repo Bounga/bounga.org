@@ -28,15 +28,17 @@ h4 {
 	font-size: 1em;
 }
 a {
+	display: inline-block;
 	color: #336699;
 	text-decoration: none;
+	background: transparent;
+  border: 0;
 }
 a:visited {
 color:#2B5782;
 }
 a:hover, a:active, a:focus {
-	color:#ED2649;
-	text-decoration: underline;
+  text-decoration: underline;
 }
 a img {
 	border: none;
@@ -88,6 +90,7 @@ header h1 a, header h1 a:visited, header h1 a:hover {
 	border-radius:15px;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
+	-o-border-radius:15px;
 }
 #main {
 	width: 500px;
@@ -141,12 +144,37 @@ aside li {
 	padding: 4px 0;
 	border-bottom: 1px solid #E6E6CD;
 }
-aside li a, aside li a:visited {
+.read-it a, .read-it a:visited, .post-tags li a, .post-tags li a:visited, aside li a, aside li a:visited {
 	color: #311C0D;
 	text-decoration: none;
+	-webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transform: scale(1) rotate(0);
+  -moz-transform: scale(1) rotate(0);
+  -o-transform: scale(1) rotate(0);
+  transform: scale(1) rotate(0);
 }
-aside li a:hover, aside li a:focus, aside li a:active {
-	color: #336699;
+.read-it a:hover, .post-tags li a:hover, aside li a:hover {
+	padding: 0.5em;
+	background: #33669d;
+	color: #fff;
+	text-decoration: none;
+  -webkit-transform: scale(1.05) rotate(-1deg);
+  -moz-transform: scale(1.05) rotate(-1deg);
+  -o-transform: scale(1.05) rotate(-1deg);
+  transform: scale(1.05) rotate(-1deg);
+}
+.post-tags li:nth-child(odd) a:hover, aside li:nth-child(odd) a:hover {
+  -webkit-transform: scale(1.05) rotate(1deg);
+  -moz-transform: scale(1.05) rotate(1deg);
+  -o-transform: scale(1.05) rotate(1deg);
+  transform: scale(1.05) rotate(1deg);
 }
 aside .syndicate ul {
 	border-top: none;
@@ -223,7 +251,6 @@ a.feed {
 	color:#A2210D;
 }
 .read-it {
-	font-weight: bold;
 	float: right;
 	clear: left;
 }
@@ -273,12 +300,6 @@ a.feed {
 	margin-right: 8px;
 	padding: 5px 0 5px 22px;
 	background: transparent url(/images/tag.png) no-repeat 0 70%;
-}
-.post-tags li a {
-	color: #6b6b6b;
-}
-.post-tags li a:link, .post-tags li a:visited {
-	color:#050A0F;
 }
 #attachments h3 {
 	font-size: 1.2em;
