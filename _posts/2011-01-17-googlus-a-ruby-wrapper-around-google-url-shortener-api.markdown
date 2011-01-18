@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Googlus - A Ruby wrapper around Google URL Shortener API
-categories: ['ruby', 'software', 'OSS', 'release', 'lib']
-tags: ['ruby', 'google', 'url', 'shortener', 'api', 'wrapper', 'lib']
+category: lib
+tags: ['ruby', 'google', 'url', 'shortener', 'api', 'wrapper', 'lib', 'software', 'oss', 'release']
 ---
 
 [Googlus](https://bitbucket.org/Bounga/googlus/) is a [Ruby](http://www.ruby-lang.org) wrapper around [Google URL Shortener REST API](http://code.google.com/intl/fr/apis/urlshortener/overview.html).
