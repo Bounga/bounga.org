@@ -33,10 +33,6 @@
     </header> 
 
     <div id="wrapper"> 
-      <section id="main">
-        {{ content }}
-      </section> 
-
       <aside> 
           <nav id="search">
             <h2><label for="q">Search</label></h2>
@@ -53,27 +49,33 @@
             <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
           </nav>
           
-          <h2>Share</h2>
-          <p><img src="/images/mooSocialize/my_socializer.gif" class="socializer" /></p>
+          <nav>
+            <h2>Share</h2>
+            <p><img src="/images/mooSocialize/my_socializer.gif" class="socializer" /></p>
+          </nav>
           
           {% if site.related_posts != empty %}
-          <h2>Related posts</h2>
-          <ul>
-            {% for post in site.related_posts limit:5 %}
-              {% if post.url != page.url %}
-              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-              {% endif %}
-            {% endfor %}
-          </ul>
+          <nav>
+            <h2>Related posts</h2>
+            <ul>
+              {% for post in site.related_posts limit:5 %}
+                {% if post.url != page.url %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
           {% endif %}
           
-          <h2>Categories</h2>
-          <ul>
-            {% for category in site.categories %}
-            <li><a href="/categories/{{ category.first }}">{{ category.first | capitalize }}</a> ({{ category.last.size }})</li>
-            {% endfor %}
-            <li><a href="/archive">Archives</a></li>
-          </ul>
+          <nav>
+            <h2>Categories</h2>
+            <ul>
+              {% for category in site.categories %}
+              <li><a href="/categories/{{ category.first }}">{{ category.first | capitalize }}</a> ({{ category.last.size }})</li>
+              {% endfor %}
+              <li><a href="/archive">Archives</a></li>
+            </ul>
+          </nav>
           
           <nav class="tags">
             <h2>Tags</h2>
@@ -99,6 +101,10 @@
             </ul>
           </nav>
       </aside>
+      
+      <section id="main">
+        {{ content }}
+      </section> 
     </div>
     <footer>
       <p>© <a href="http://www.cavigneaux.net/">Nicolas Cavigneaux</a> 2010.</p>
