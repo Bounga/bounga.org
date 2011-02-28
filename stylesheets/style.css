@@ -285,7 +285,7 @@ a.feed {
 }
 .post-content ul, .post-content ol {
 	margin: 0 0 0.5em 0;
-	padding: 0 0 0 15px;
+	padding: 0 0 0 30px;
 }
 .post-content li {
 	margin: 0;
@@ -295,6 +295,9 @@ a.feed {
 	margin: 4px 0 4px 0;
 	padding: 0 5px;
 	border-left: 4px solid #bfbfbf;
+}
+.post-content img {
+  width:100%;
 }
 .post-content h1, .post-content h2, .post-content h3 {
 	color: #369;
