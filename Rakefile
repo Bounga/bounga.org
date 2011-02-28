@@ -6,6 +6,8 @@ HOST = "www.bounga.org"
 REMOTE_USER = "nico"
 REMOTE_DIRECTORY = "/home/nico/www/bounga.org"
 
+task :default => [:build]
+
 desc 'Generate category pages'
 task :categories do
   puts "Generating category pages..."
