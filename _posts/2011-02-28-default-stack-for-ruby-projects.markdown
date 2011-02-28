@@ -153,7 +153,7 @@ Rack::Bug adds a diagnostics toolbar to Rack apps. When enabled, it injects a fl
 
 Here's a screenshot:
 
-![Rack::Bug Screenshot](http://img.skitch.com/20091027-n8pxwwx8r61tc318a15q1n6m14.png "Rack::Bug screenshot")
+[![Rack::Bug Screenshot](http://img.skitch.com/20091027-n8pxwwx8r61tc318a15q1n6m14.png "Rack::Bug screenshot")](http://img.skitch.com/20091027-n8pxwwx8r61tc318a15q1n6m14.png "Big screenshot")
 
 HAML
 ----
