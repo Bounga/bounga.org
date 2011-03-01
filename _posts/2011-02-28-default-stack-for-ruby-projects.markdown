@@ -36,7 +36,7 @@ Bundler
 MiniTest
 --------
 
-[MiniTest]() provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking. MiniTest is now the default testing framework shipped with Ruby 1.9.
+[MiniTest](http://bfts.rubyforge.org/minitest/) provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking. MiniTest is now the default testing framework shipped with Ruby 1.9.
 
 MiniTest has a real value because without any other third-party lib you can do:
 
