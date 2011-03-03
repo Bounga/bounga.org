@@ -175,14 +175,14 @@ For real webapps with lots of user interactions, features and a database I alway
 
 **Gems**
 
-- Rack::Bug — see above
-- [FlashHelper](https://rubygems.org/gems/flash_helper) — a gem to ease flash notifications displaying
+- Rack::Bug — [see above](#rackbug)
+- [FlashHelper](https://rubygems.org/gems/flash_helper) — a gem which ease flash notifications displaying
 - [MetaWhere](http://metautonomo.us/projects/metawhere/ "MetaWhere  &#8211;  metautonomo.us") — ActiveRecord finder on steroïds with pure Ruby SQL syntax
 - [Devise](https://github.com/plataformatec/devise) — Flexible authentication based on Warden
 - [Cancan](https://github.com/ryanb/cancan) — Authorization which restricts what resources a given user is allowed to access
 - [Kaminari](https://github.com/amatsuda/kaminari) — a scope & engine based paginator
-- HAML — see above
-- SASS — see above
+- HAML — [see above](#haml)
+- SASS — [see above](#sass)
 - [CarrierWave](https://github.com/jnicklas/carrierwave) — a simple and flexible way to upload files
 
 Here is a great blog post about [how to setup Devise and Cancan](http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers/ "Rails Authentication with Devise and CanCan &#8211; Customizing Devise Controllers | Tony Amoyal").
