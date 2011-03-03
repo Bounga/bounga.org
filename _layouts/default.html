@@ -24,6 +24,7 @@
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Chewy' rel='stylesheet' type='text/css' />
   
   <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/mootools-more.js" type="text/javascript" charset="utf-8"></script>
   <script src="/javascripts/mooSocialize.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -121,32 +122,33 @@
     </footer>
   </div>
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-915737-1']);
-    _gaq.push(['_trackPageview']);
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-915737-1']);
+  _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-      </script>
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-      <!-- Comment count code from disqus -->
-      <script type="text/javascript">
-      //<![CDATA[
-      (function() {
-        var links = document.getElementsByTagName('a');
-        var query = '?';
-        for(var i = 0; i < links.length; i++) {
-          if(links[i].href.indexOf('#disqus_thread') >= 0) {
-            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-          }
-        }
-        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/bounga/get_num_replies.js' + query + '"></' + 'script>');
-        })();
-        //]]>
-        </script> 
+  //<![CDATA[
+  (function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/bounga/get_num_replies.js' + query + '"></' + 'script>');
+  })();
+  //]]>
+  
+  window.addEvent('domready', function() {
+    new Fx.SmoothScroll({duration: 700},window);
+  });
+  </script> 
 </body>
 </html>
