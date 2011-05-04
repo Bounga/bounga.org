@@ -7,3 +7,4 @@ auto: true
 url: http://www.bounga.org
 name: Bounga's Home
 exclude: ['README', 'Rakefile']
+destination: public
