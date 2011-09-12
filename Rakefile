@@ -58,7 +58,6 @@ task :tags do
   FileUtils.mkdir_p("tags")
   
   tagcloud = ''
-  tags_count = site.posts.map { |p| p.tags }.flatten.length
   
   site.tags.each do |label, posts|
     unless File.exists?("tags/#{label}.html")
@@ -82,8 +81,9 @@ HTML
         file.puts html
       end
     end
-    
-    ratio = (posts.length / tags_count) * 100
+
+    ratio = ((posts.length / site.posts.length) * 100).to_i
+    ratio = ratio - (ratio % 10)
     tagcloud += "<li><a href='/tags/#{label}' class='tag#{ratio}'>#{label}</a></li> "
   end
   
