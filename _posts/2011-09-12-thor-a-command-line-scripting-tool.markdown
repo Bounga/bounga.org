@@ -7,12 +7,13 @@ tags: ['ruby', 'gem', 'command-line', 'admin', 'shell', 'thor', 'rake']
 
 [Thor](https://github.com/wycats/thor) is a simple and efficient tool for building self-documenting command line utilities. I'm a shell guy, I use a terminal everyday and most of my job is done in my [favorite text editor](http://macromates.com) or in a terminal. To be effective I need to have a suitable text editor and the ability to automate most of the things I do in the terminal. 
 
-Here comes Thor. Thor will help you to script your common actions and command-lines. Rather having 5 commands to do a recurent job why just not having one! Thor will remove the pain of having to handle command-line options parsing, documentation and tasks dependencies. You'll be able to use Thor on a given project or even system-wide. It's a system-wide [Rake](http://rake.rubyforge.org/) on steroïds which ease command-line options parsing, inline help generation, file-system manipulation, templating, …
+Here comes Thor. Thor will help you to script your common actions and command-lines. Rather than having five commands to do a recurent job why just not having one?!
+
+Thor will remove the pain of having to handle command-line options parsing, documentation and tasks dependencies. You'll be able to use Thor on a given project or even system-wide. It's a system-wide [Rake](http://rake.rubyforge.org/) on steroïds which ease command-line options parsing, inline help generation, file-system manipulation, templating, …
 
 This post will show you how you can use Thor to simplify your daily tasks. We'll see all Thor capabilities and show some simple but real-world use cases. 
 
 Last but not least, Thor was written by [Yehuda Katz](http://yehudakatz.com/).
-
 
 Let's go ! Install it via `gem install thor`
 
@@ -39,7 +40,7 @@ Now you can try `thor list` ou `thor -T` to see available tasks:
 
 # Add parameters
 
-Tasks can take arguments. This way you don't need to use environment variables anymore like you're used to with Rake:
+Tasks can take arguments. This way you don't need to use environment variables anymore as you're used to with Rake:
 
 {% highlight ruby %}
   class Test < Thor
@@ -153,10 +154,11 @@ Thor allows to invoke a task from within another task so you can chain task call
   # => 1
   # => 2
   # => 3
+{% endhighlight %}
 
 # Interacting with user
 
-Thor bundles some method that ease interacting with user. Here are some:
+Thor bundles some methods which ease interacting with user. Here are some:
 
 - say
 - ask
@@ -187,21 +189,54 @@ Sometimes you'll need to have your tasks defined in a namespace to ensure there'
   end
 
   # $ thor bounga:app:task
-{% highlight %}
+{% endhighlight %}
 
 # System-wide !
 
-One the most interesting feature of Thor is that a task can be install system-wide. It means that you don't need to have a Thorfile in your current directory to be able to call a task :
+One the most interesting feature of Thor is that a task can be installed system-wide. It means that you don't need to have a Thorfile in your current directory to be able to call a task :
 
     thor install Thorfile
 
 You can now use tasks defined in your Thorfile from anywhere!
 
-# Real world example
+# Real-world example
 
-Resources
-=========
+Let's say your working on a Rails app you often need to clone and setup maybe because there's a lot of developers on the project or maybe you need multiple repos to test things … 
 
-- [Proc class](http://apidock.com/ruby/Proc)
-- [Kernel#lambda](http://apidock.com/ruby/Kernel/lambda)
-- [Renamer source code](https://bitbucket.org/Bounga/renamer/src/)
+{% highlight ruby %}
+  class Setup < Thor
+    desc "prepare", "copy configuration files"
+    method_options :force => :boolean
+    
+    def prepare(file = "*.dist")
+      Dir["config/#{name}"].each do |source|
+        destination = "config/#{File.basename(source, ".dist")}"
+        FileUtils.rm(destination) if options[:force] && File.exist?(destination)
+        
+        if File.exist?(destination)
+          puts "Skipping #{destination} because it already exists"
+        else
+          puts "Generating #{destination}"
+          FileUtils.cp(source, destination)
+        end
+      end
+    end
+
+    desc "populate", "generate records"
+    method_options :count => 10
+    
+    def populate
+      require File.expand_path('config/environment.rb')
+      options[:count].times do |num|
+        puts "Generating post #{num}"
+        Post.create!(:title => "Post #{num}", :body => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+      end
+    end
+  end
+{% endhighlight %}
+
+You can easily extend this example and use it everywhere by installing it system-wide rather than adding the same Rakefile to each project.
+
+Such a framework allows you to easily create automated tasks, generators and more. It can even be a basis for a command-line interface to one of your lib and saves you from writing boring command-line parser.
+
+You should really give it a try if you find yourself doing the same thing again and again in your terminal. It's super easy to setup and all needed tools are bundled. If you want to improve and speed up your workflow, Thor will help you for sure.
