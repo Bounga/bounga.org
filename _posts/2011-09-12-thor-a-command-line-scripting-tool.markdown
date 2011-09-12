@@ -24,12 +24,12 @@ To create tasks you need a *Thorfile* (Rakefile equivalent) which will include o
 A simple example would be:
 
 {% highlight ruby %}
-  class Test < Thor
-    desc "hi", "Say hi"
-    def hi
-      puts "hi !"
-    end
+class Test < Thor
+  desc "hi", "Say hi"
+  def hi
+    puts "hi !"
   end
+end
 {% endhighlight %}
 
 Now you can try `thor list` ou `thor -T` to see available tasks:
@@ -43,12 +43,12 @@ Now you can try `thor list` ou `thor -T` to see available tasks:
 Tasks can take arguments. This way you don't need to use environment variables anymore as you're used to with Rake:
 
 {% highlight ruby %}
-  class Test < Thor
-    desc "hi NAME", "Say hi"
-    def hi(name)
-      puts "Hi #{name} !"
-    end
+class Test < Thor
+  desc "hi NAME", "Say hi"
+  def hi(name)
+    puts "Hi #{name} !"
   end
+end
 {% endhighlight %}
 
 Now help displays:
@@ -75,14 +75,14 @@ What we've defined is a *parameter* so it is mandatory. If you forget a mandator
 You'll often need "optionnal parameters". Options can be added this way:
 
 {% highlight ruby %}
-  class Test < Thor
-    desc "hi NOM", "Say hi"
-    method_option :verbose, :aliases => "-v", :desc => "Be verbose"
-    def hi(name)
-      puts "Hi #{name} !"
-      puts "How are you today?" if options[:verbose]
-    end
+class Test < Thor
+  desc "hi NOM", "Say hi"
+  method_option :verbose, :aliases => "-v", :desc => "Be verbose"
+  def hi(name)
+    puts "Hi #{name} !"
+    puts "How are you today?" if options[:verbose]
   end
+end
 {% endhighlight %}
 
 Give it a try:
@@ -99,11 +99,11 @@ Options can be defined with a default, given type, …:
 Available types are:
 
 {% highlight ruby %}
-  :boolean # --option / --option=true / --no-option
-  :string  # --option=VALUE
-  :numeric # --option=2
-  :array   # --option=nico matz dhh
-  :hash    # --option=nom:Nico lang:ruby
+:boolean # --option / --option=true / --no-option
+:string  # --option=VALUE
+:numeric # --option=2
+:array   # --option=nico matz dhh
+:hash    # --option=nom:Nico lang:ruby
 {% endhighlight %}
 
 # Add task dependencies
@@ -111,49 +111,49 @@ Available types are:
 Thor allows to invoke a task from within another task so you can chain task calls and define dependencies:
 
 {% highlight ruby %}
-  class Counter < Thor
-    desc "one", "Prints 1"
-    def one
-      puts 1
-    end
-
-    desc "two", "Prints 1, 2"
-    def two
-      invoke :one
-      puts 2
-    end
-
-    desc "three", "Prints 1, 2, 3"
-    def three
-      invoke :two
-      puts 3
-    end
+class Counter < Thor
+  desc "one", "Prints 1"
+  def one
+    puts 1
   end
+
+  desc "two", "Prints 1, 2"
+  def two
+    invoke :one
+    puts 2
+  end
+
+  desc "three", "Prints 1, 2, 3"
+  def three
+    invoke :two
+    puts 3
+  end
+end
 {% endhighlight %}
 
 `Thor::Group` class can achieve the same goal calling each method of the group, one by one, in definition order:
 
 {% highlight ruby %}
-  class Counter < Thor::Group
-    desc "Prints 1 2 3"
+class Counter < Thor::Group
+  desc "Prints 1 2 3"
 
-    def one
-      puts 1
-    end
-
-    def two
-      puts 2
-    end
-
-    def three
-      puts 3
-    end
+  def one
+    puts 1
   end
 
-  # $ thor counter
-  # => 1
-  # => 2
-  # => 3
+  def two
+    puts 2
+  end
+
+  def three
+    puts 3
+  end
+end
+
+# $ thor counter
+# => 1
+# => 2
+# => 3
 {% endhighlight %}
 
 # Interacting with user
@@ -182,13 +182,13 @@ You should really take a look at [these methods documentation](http://rdoc.info/
 Sometimes you'll need to have your tasks defined in a namespace to ensure there's no collision with other tasks. No problem:
 
 {% highlight ruby %}
-  module Bounga
-    class App < Thor
-      # tasks
-    end
+module Bounga
+  class App < Thor
+    # tasks
   end
+end
 
-  # $ thor bounga:app:task
+# $ thor bounga:app:task
 {% endhighlight %}
 
 # System-wide !
@@ -204,35 +204,35 @@ You can now use tasks defined in your Thorfile from anywhere!
 Let's say your working on a Rails app you often need to clone and setup maybe because there's a lot of developers on the project or maybe you need multiple repos to test things … 
 
 {% highlight ruby %}
-  class Setup < Thor
-    desc "prepare", "copy configuration files"
-    method_options :force => :boolean
-    
-    def prepare(file = "*.dist")
-      Dir["config/#{name}"].each do |source|
-        destination = "config/#{File.basename(source, ".dist")}"
-        FileUtils.rm(destination) if options[:force] && File.exist?(destination)
-        
-        if File.exist?(destination)
-          puts "Skipping #{destination} because it already exists"
-        else
-          puts "Generating #{destination}"
-          FileUtils.cp(source, destination)
-        end
-      end
-    end
-
-    desc "populate", "generate records"
-    method_options :count => 10
-    
-    def populate
-      require File.expand_path('config/environment.rb')
-      options[:count].times do |num|
-        puts "Generating post #{num}"
-        Post.create!(:title => "Post #{num}", :body => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+class Setup < Thor
+  desc "prepare", "copy configuration files"
+  method_options :force => :boolean
+  
+  def prepare(file = "*.dist")
+    Dir["config/#{name}"].each do |source|
+      destination = "config/#{File.basename(source, ".dist")}"
+      FileUtils.rm(destination) if options[:force] && File.exist?(destination)
+      
+      if File.exist?(destination)
+        puts "Skipping #{destination} because it already exists"
+      else
+        puts "Generating #{destination}"
+        FileUtils.cp(source, destination)
       end
     end
   end
+
+  desc "populate", "generate records"
+  method_options :count => 10
+  
+  def populate
+    require File.expand_path('config/environment.rb')
+    options[:count].times do |num|
+      puts "Generating post #{num}"
+      Post.create!(:title => "Post #{num}", :body => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+    end
+  end
+end
 {% endhighlight %}
 
 You can easily extend this example and use it everywhere by installing it system-wide rather than adding the same Rakefile to each project.
