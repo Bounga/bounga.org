@@ -1,5 +1,3 @@
--*-markdown-*-
-
 www.bounga.org
 ==============
 
