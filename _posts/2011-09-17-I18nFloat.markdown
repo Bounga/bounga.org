@@ -1,0 +1,55 @@
+---
+layout: post
+title: I18nFloat - Allow comma style decimals for ActiveRecord attributes
+category: lib
+tags: ['ruby', 'comma', 'rails', 'gem', 'lib', 'software', 'oss', 'release', 'decimal', 'float']
+---
+
+[I18nFloat](https://bitbucket.org/Bounga/i18nfloat/) is a [Ruby](http://www.ruby-lang.org) gem to use with Rails. I18nFloat allows your users to use format number like "1 200,84" in forms. ActiveRecord Float attributes don't care anymore if you like commas or dots!.
+
+I often use URL shortener services and I was like "It would be cool if I could use it in Textmate, in my Ruby code or on the command-line!" so I wrote this thin lib to be able to do that.
+
+Features
+========
+
+- comma for decimals
+- whitespace as separator
+- standard format still usable
+- only a gem in your Gemfile and you're good to go
+
+Installation
+============
+
+{% highlight bash %}
+$ gem install I18nFloat
+{% endhighlight %}
+
+Usage
+=====
+
+Let's say you've got a Marathon model with a Float columns named `duration`:
+
+{% highlight ruby %}
+Marathon.new(:duration => "9300303.92")
+# => #<Marathon id: nil, duration: 9300303.92, created_at: nil, updated_at: nil>
+Marathon.new(:duration => "9300303,92")
+# => #<Marathon id: nil, duration: 9300303.92, created_at: nil, updated_at: nil>
+Marathon.new(:duration => "9 300 303,92")
+# => #<Marathon id: nil, duration: 9300303.92, created_at: nil, updated_at: nil>
+{% endhighlight %}
+  
+Other
+=====
+
+If you want to contribute you should take a look at:
+
+- [Source Style](http://www.bitbucket.org/Bounga/i18nfloat/wiki/SourceStyle)
+- [Ticket Guidelines](http://www.bitbucket.org/Bounga/i18nfloat/wiki/TicketGuidelines)
+- [Contributing](http://www.bitbucket.org/Bounga/i18nfloat/wiki/Contributing)
+- [RDoc](http://rubydoc.info/gems/I18nFloat/)
+
+[Source](http://www.bitbucket.org/Bounga/i18nfloat/src) can be cloned using [Mercurial](http://mercurial.selenic.com/) on my [Bitbucket repo](https://bitbucket.org/Bounga/i18nfloat).
+
+Problems, comments, and suggestions are welcome on the [tracker](http://www.bitbucket.org/Bounga/i18nfloat/issues/new/).
+
+This gem is released under the [MIT license](http://creativecommons.org/licenses/MIT/).
