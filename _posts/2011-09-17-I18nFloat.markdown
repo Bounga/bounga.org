@@ -7,10 +7,12 @@ tags: ['ruby', 'comma', 'rails', 'gem', 'lib', 'software', 'oss', 'release', 'de
 
 [I18nFloat](https://bitbucket.org/Bounga/i18nfloat/) is a [Ruby](http://www.ruby-lang.org) gem to use with Rails. I18nFloat allows your users to use format number like "1 200,84" in forms. ActiveRecord Float attributes don't care anymore if you like commas or dots!.
 
-With this gem loaded, you're users are able to use comma style decimal in forms.
+With this gem loaded, your users are able to use comma style decimal in forms.
 
 Features
 ========
+
+Here is current features but ideas and contributions are welcome:
 
 - comma for decimals
 - whitespace as separator
