@@ -12,7 +12,7 @@ With this gem loaded, your users are able to use comma style decimal in forms.
 Features
 ========
 
-Here is current features but ideas and contributions are welcome:
+Here are current features but ideas and contributions are welcome:
 
 - comma for decimals
 - whitespace as separator
