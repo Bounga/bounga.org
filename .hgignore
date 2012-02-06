@@ -4,3 +4,5 @@ public/*
 _includes/tags.html
 tags/*
 categories/*
+vendor/bundle
+.bundle/config
