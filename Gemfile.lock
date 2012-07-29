@@ -27,4 +27,5 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  kramdown
   rake

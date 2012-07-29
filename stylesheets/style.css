@@ -1,7 +1,7 @@
 /*
    style.css
    blog
-   
+
    Created by Nicolas Cavigneaux on 2010-12-21.
    Copyright 2010 Bounga. All rights reserved.
 */
@@ -57,10 +57,10 @@ pre {
 .right {
 	float: right;
 }
- 
+
 /* Layout */
 #page {
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 header {
 	position: relative;
@@ -117,7 +117,7 @@ footer p {
 footer p a, footer p a:visited {
 	color: #6d8824;
 }
- 
+
 /* Sidebar styles */
 aside {
 	width: 200px;
@@ -258,7 +258,7 @@ a.feed {
 	clear: left;
 }
 .post-content {
-	line-height:1.5em;
+	margin-top: 1em;
 }
 .post-content acronym {
 	cursor: help;
@@ -316,7 +316,7 @@ a.feed {
 }
 .post-tags {
 	list-style: none;
-	margin: 1em 0 1em;
+	margin: 1em 0 0 0;
 	padding: 3px 0;
 }
 .post-tags li {
@@ -344,7 +344,7 @@ a.feed {
 	padding: 0;
 	vertical-align: bottom;
 }
- 
+
 /* Disqus comments and trackbacks
 -------------------------------------------------------- */
 h3.comments {
@@ -354,3 +354,6 @@ h3.comments {
 #dsq-content .dsq-item-trackback {
 	background: transparent url(/images/trackback.png) no-repeat 230px 50%;
 }
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
+display: none !important;}

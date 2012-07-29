@@ -1,19 +1,21 @@
 ---
 layout: default
 ---
-<article> 
-  <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2> 
-  <details><a href="http://www.cavigneaux.net">Nicolas Cavigneaux</a> on {{ page.date | date_to_string }} in {{ page.categories | array_to_sentence_string | capitalize }}</details> 
+<article>
+  <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+  <details>
+    <a href="http://www.cavigneaux.net">Nicolas Cavigneaux</a> on {{ page.date | date_to_string }} in {{ page.categories | array_to_sentence_string | capitalize }}
 
-  {% if page.tags != empty %}
-  <ul class="post-tags">
-    {% for tag in page.tags %}
-      <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
-    {% endfor %}
-  </ul>
-  {% endif %}
+    {% if page.tags != empty %}
+    <ul class="post-tags">
+      {% for tag in page.tags %}
+        <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </details>
 
-  <div class="post-content">{{ content }}</div> 
+  <div class="post-content">{{ content }}</div>
 
   <h3 class="comments">Comments</h3>
   <section id="comments">

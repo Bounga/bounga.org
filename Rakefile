@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'jekyll'
+require 'kramdown'
 include Jekyll::Filters
 
 HOST = "www.bounga.org"
@@ -11,16 +12,16 @@ task :default => [:build]
 desc 'Generate category pages'
 task :categories do
   puts "Generating category pages..."
-  
+
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
   site.read_posts('')
-  
+
   FileUtils.mkdir_p("categories")
-  
+
   site.categories.each do |category, posts|
     unless File.exists?("categories/#{category}.html")
-      
+
       html = ''
       html << <<-HTML
 ---
@@ -42,23 +43,23 @@ HTML
       end
     end
   end
-  
+
   puts 'Category pages generation done.'
 end
 
 desc 'Generate tags cloud'
 task :tags do
   puts "Generating tags cloud..."
-  
+
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
   site.read_posts('')
-  
-  
+
+
   FileUtils.mkdir_p("tags")
-  
+
   tagcloud = ''
-  
+
   site.tags.each do |label, posts|
     unless File.exists?("tags/#{label}.html")
       html = ''
@@ -86,15 +87,15 @@ HTML
     ratio = ratio - (ratio % 10)
     tagcloud += "<li><a href='/tags/#{label}' class='tag#{ratio}'>#{label}</a></li> "
   end
-  
+
   File.open("_includes/tags.html", 'w') do |file|
     file.puts tagcloud
   end
-  
+
   puts 'Tags cloud generation done.'
 end
 
-desc 'Build _site content'
+desc 'Build public content'
 task :build => [:categories, :tags] do
   system('jekyll --no-auto')
 end
