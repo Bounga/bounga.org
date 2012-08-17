@@ -8,4 +8,4 @@ url: http://www.bounga.org
 name: Bounga's Home
 exclude: ['README', 'Rakefile', 'vendor', 'Gemfile', 'Gemfile.lock']
 destination: public
-markdown: kramdown
+markdown: maruku

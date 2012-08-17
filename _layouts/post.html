@@ -4,7 +4,9 @@ layout: default
 <article>
   <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
   <details>
-    <a href="http://www.cavigneaux.net">Nicolas Cavigneaux</a> on {{ page.date | date_to_string }} in {{ page.categories | array_to_sentence_string | capitalize }}
+    <summary>
+      <a href="http://www.cavigneaux.net">Nicolas Cavigneaux</a> on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> in {{ page.categories | array_to_sentence_string | capitalize }}
+    </summary>
 
     {% if page.tags != empty %}
     <ul class="post-tags">

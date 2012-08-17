@@ -7,7 +7,9 @@ title: Ruby Ninja
 <article>
   <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
   <details>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time> in {{ post.categories | array_to_sentence_string | capitalize }}
+    <summary>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time> in {{ post.categories | array_to_sentence_string | capitalize }}
+    </summary>
 
     {% if post.tags != empty %}
     <ul class="post-tags">
