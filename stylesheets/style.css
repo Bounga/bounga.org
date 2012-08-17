@@ -89,9 +89,6 @@ header h1 a, header h1 a:visited, header h1 a:hover {
 	padding: 20px 0;
 	background-color: #fff;
 	border-radius:15px;
-	-moz-border-radius:15px;
-	-webkit-border-radius:15px;
-	-o-border-radius:15px;
 }
 #main {
 	width: 500px;
@@ -151,9 +148,6 @@ aside li {
 .read-it a, .read-it a:visited, .post-tags li a, .post-tags li a:visited, aside li a, aside li a:visited {
 	color: #311C0D;
 	text-decoration: none;
-	-webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
   border-radius: 4px;
   -moz-transition-duration: 0.25s;
   -webkit-transition-duration: 0.25s;
