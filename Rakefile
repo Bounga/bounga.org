@@ -4,8 +4,8 @@ require 'kramdown'
 include Jekyll::Filters
 
 HOST = "www.bounga.org"
-REMOTE_USER = "nico"
-REMOTE_DIRECTORY = "/home/nico/www/bounga.org/"
+REMOTE_USER = "synbioz"
+REMOTE_DIRECTORY = "/var/www/bounga.org/"
 
 task :default => [:build]
 
