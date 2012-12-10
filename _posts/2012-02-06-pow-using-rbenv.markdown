@@ -110,7 +110,7 @@ Pow doesn't know anything about rbenv so you need to tell him about the right PA
 Edit *~/.powconfig* like this:
 
 {% highlight bash %}
-export PATH=/Users/cavigneaux/.rbenv/shims:/Users/cavigneaux/.rbenv/bin:$PATH
+export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
 {% endhighlight %}
 
 (change "cavigneaux" with your username)
