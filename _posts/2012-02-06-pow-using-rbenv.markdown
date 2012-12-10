@@ -113,6 +113,6 @@ Edit *~/.powconfig* like this:
 export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
 {% endhighlight %}
 
-(change "cavigneaux" with your username)
+Be sure to restart pow after editing this file.
 
 Now you have rbenv and Pow up & running!
