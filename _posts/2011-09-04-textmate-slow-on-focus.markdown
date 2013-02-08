@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to solve Textmate slowdown on focus
-category: Tips
+category: tips
 tags: ['textmate', 'slowdown', 'project']
 ---
 
@@ -18,11 +18,11 @@ I decided to tells Textmate to ignore this upload root directory to see if there
 To ignore a given directory in your projects, go to "Preferences" -> "Advanced" -> "Folder References". In folder pattern you can add pattern for directories to be ignore in your projects. In my case  default:
 
   !.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$
-  
+
 becomes:
 
   !.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle)|public/system)$
-  
+
 I only had "|public/system" to the end of the regular expression.
 
 So if you have slow focus with textmate be sure to check for large directories that you don't rely on to develop and ignore them!
