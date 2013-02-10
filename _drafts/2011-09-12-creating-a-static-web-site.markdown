@@ -5,7 +5,7 @@ category: ruby
 tags: ['ruby', 'web', 'tools', 'shell', 'static']
 ---
 
-Couple months ago I was working on my [personal website](http:/www.cavigneaux.net) that I decided to re-write from scratch since most of the existing things will be scratched off and replaced.
+Couple months ago I was working on my [personal website](http:/www.cavigneaux.net) that I decided to re-write from scratch since most of the existing things had to be scratched off and replaced.
 
 This site has a really simple purpose: present myself, my knowledges and projects I work on. A way for potential customers & partners to know a bit more about me and my skills.
 
@@ -13,7 +13,7 @@ Rather than writing a full-fledge Rails app I decided to create a simple static 
 
 # Nanoc
 
-No I was not ready to write all site pages with raw HTML / CSS again… [Nanoc](http://nanoc.stoneship.org/) was the right solution for my needs.
+No I was not ready to write all pages with raw HTML / CSS again… [Nanoc](http://nanoc.stoneship.org/) was the best solution for my needs.
 
 Nanoc is a web site generator which can use layouts and compile documents written in [HAML](http://haml-lang.com/) or [Markdown](http://daringfireball.net/projects/markdown/) into multiple directories and static files ready to be push on the web server.
 
@@ -23,14 +23,13 @@ Nanoc is available as a gem and can be installed this way:
 gem install nanoc
 {% endhighlight %}
 
-You're now ready to create your website skeleton:
+Next step is to create website skeleton:
 
 {% highlight console %}
 nanoc create_site cavigneaux.net
 {% endhighlight %}
 
-
-This leaves you with a new directory (cavigneaux.net in previous example) containing:
+A new directory is created and contains:
 
 - a YAML config file
 - a `Rakefile` with predefined tasks for Nanoc
@@ -38,22 +37,25 @@ This leaves you with a new directory (cavigneaux.net in previous example) contai
 - a `content` directory with an HTML index file and a default stylesheet
 - a default layout in `layouts` directory
 
-First thing to do is to try to compile this skeleton to understand what is happening under the hood:
+First thing to do is to compile this skeleton to understand what is happening under the hood:
 
 {% highlight console %}
 nanoc compile
 {% endhighlight %}
 
-It should create a new directory named `output` containing the static version of the website. You can browse thow it using the bundle web server:
+It should create a new directory named `output` containing the static version of the website. We can browse it using the bundle web server:
 
 {% highlight console %}
 nanoc view
 {% endhighlight %}
 
-You can now browse [http://localhost:3000](http://localhost:3000). This default page was generated using files in `content` directory. It's an introduction to Nanoc.
+This starts a Ruby webserver at [http://localhost:3000](http://localhost:3000).
 
-You can now hack your site adding HTML, Javascript, CSS and images files. I decided to use HAML for layout and content files, SCSS for stylesheets and CoffeeScript for javascripts.
+The default page was generated using files in `content` directory. It's an introduction to Nanoc.
 
+We're ready to create our site adding HTML, Javascript, CSS and images files.
+
+I decided to use HAML for layout and content files, SCSS for stylesheets and CoffeeScript for javascripts.
 
 Here is my tweaked nanoc config:
 
@@ -101,7 +103,39 @@ data_sources:
 
 # HAML / SCSS / CoffeeScript
 
+As said earlier, I use HAML to generate both website layout and content.
+
 # Guard
+
+I'm a lazy guy. If I can automate things, I'll do for sure.
+
+So here comes Guard which is a gem that can watch directory and file changes and acts on changes.
+
+I use it to automatically:
+
+- install gems when Gemfile is modified
+- re-compile website when config, rules, layout or contents changes
+- handle livereload to see modification live (without reloading page by hand) on my browser when a css, a js or an html file has changed
+- convert coffeescript files to CSS files
+
+{% highlight ruby %}
+guard 'bundler' do
+  watch('Gemfile')
+end
+
+guard 'nanoc' do
+  watch(/^config.yaml/)
+  watch(/^Rules/)
+  watch(/^layouts\//)
+  watch(/^content\//)
+end
+
+guard 'livereload' do
+  watch(%r{public/.+\.(css|js|html)})
+endwr
+
+guard 'coffeescript', :input => 'content/coffeescripts', :output => 'content/javascripts'
+{% endhighlight}
 
 # Livereload
 
