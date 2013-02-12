@@ -214,7 +214,7 @@ aside .tags ul li {
 	background: #336699;
 	color: #fff;
 	border: 1px solid #336699;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 a.feed {
 	background: transparent url(/images/feed.png) no-repeat 0 0.25em;
