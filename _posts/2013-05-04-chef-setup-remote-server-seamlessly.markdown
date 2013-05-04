@@ -23,7 +23,7 @@ This means that if you've already installed softwares (eg: a web server, a SMTP,
 
 If you want to upgrade the web server version, all you have to do is to set the version in your recipe and then run Chef again. Chef will detect if the installed version and the recipe one are not the same. If they are different it will install the one specified in the recipe.
 
-Chef recipes are organized in a standard directory structure. It provides many useful tools out of the box to automate tasks. You can do anything through Chef so you can really do whatever you want as if you were working interactively on the server via SSH. Install a package using your system packing tool, write configuration files, create a user or a directory tree, set up a backup strategy. To sum up, you can do whatever you can think of on the server.
+Chef recipes are organized in a standard directory structure. It provides many useful tools out of the box to automate tasks. You can do anything through Chef as if you were working interactively on the server via SSH. Install a package using your system packaging tool, write configuration files, create a user or a directory tree, set up a backup strategy. To sum up, you can do whatever you can think of on the server.
 
 You can create your own recipes to match your needs or use existing recipes. You have to be careful with existing recipes you borrowed from somewhere 'cause you leave the door open to your servers when you execute Chef recipes. Be sure to check that you're not using nasty recipes.
 
@@ -253,7 +253,7 @@ alias l='ls -lA1'
 
 Don't forget you're in an erb file so you can use variables defined in node.json and generate content using Ruby code.
 
-## Define ronjobs
+## Define cronjobs
 
 Another recurrent need on remote servers is to [create cronjob](http://wiki.opscode.com/display/chef/Resources#Resources-Cron) for automated tasks:
 
