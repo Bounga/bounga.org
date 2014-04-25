@@ -23,14 +23,14 @@ layout: nil
     <title>{{ post.title }}</title>
     <link rel='alternate' type='text/html' href='{{ post.url }}' />
     <id>{{ site.url }}/{{ post.id }}</id>
-    <updated>{{ post.date | date.getutc:"%Y-%m-%dT%H:%M:00Z" }}</updated>
-    
+    <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:00Z" }}</updated>
+
     <author>
       <name>Nicolas Cavigneaux</name>
       <uri>{{ site.url }}</uri>
       <email>nico@bounga.org</email>
     </author>
-    
+
     {% for category in post.categories %}
     <category term="{{ category.first }}" />
     {% endfor %}
