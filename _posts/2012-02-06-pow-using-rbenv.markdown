@@ -5,7 +5,7 @@ category: ruby
 tags: ['ruby', 'webserver', 'pow', 'rbenv']
 ---
 
-Couple weeks ago I switched from [RVM](http://beginrescueend.com/) to [rbenv](https://github.com/sstephenson/rbenv) because I think it's a cleaner and faster way to handle Ruby versions. It is more respecful of the Unix philosophy.
+Couple weeks ago I switched from [RVM](http://beginrescueend.com/) to [rbenv](https://github.com/sstephenson/rbenv) because I think it's a cleaner and faster way to handle Ruby versions. It is more respecful of the Unix philosophy.
 
 It worked like a charm right after the installation but [Pow](http://pow.cx/) wasn't working anymore. There's just a little trick to know.
 
@@ -99,12 +99,12 @@ You can automate this behaviour by using Bundler config file. Edit *~/.bundle/co
   BUNDLE_PATH: vendor/bundle
 {% endhighlight %}
 
-If you really need and want something similar to RVM gemsets, take a look at [rbenv-gemset](https://github.com/jamis/rbenv-gemset).
+If you really need and want something similar to RVM gemsets, take a look at [rbenv-gemset](https://github.com/jamis/rbenv-gemset).
 
 Using Pow with rbenv
 ====================
 
-I ran into a problem when I tried to access my projects using Pow. Pow was getting the request but crashes due to gems missing or bad ruby version.
+I ran into a problem when I tried to access my projects using Pow. Pow was getting the request but crashes due to gems missing or bad ruby version.
 
 Pow doesn't know anything about rbenv so you need to tell him about the right PATH to be able to use rbenv.
 
