@@ -97,7 +97,7 @@ end
 
 desc 'Build public content'
 task :build => [:categories, :tags] do
-  system('jekyll --no-auto')
+  system('jekyll build')
 end
 
 desc 'Deploy site on web server'
