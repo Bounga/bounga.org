@@ -32,10 +32,11 @@ You're now ready to install your rubies. Be sure to **uninstall RVM first** if y
 $ rvm implode
 {% endhighlight %}
 
-Add this line to your *.{zsh,bash}\_profil* :
+Add this line to your *.bash_profile* or *.zshenv* :
 
 {% highlight bash %}
-eval "$(rbenv init -)"
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 {% endhighlight %}
 
 Open up a new shell and you're ready to go.
