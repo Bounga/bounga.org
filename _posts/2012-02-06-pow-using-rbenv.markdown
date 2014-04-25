@@ -104,6 +104,8 @@ If you really need and want something similar to RVM gemsets, take a look at [rb
 Using Pow with rbenv
 ====================
 
+***Update:** Note for users of Pow < 0.4.2 only. As of Pow >= 0.4.2 the following problem doesn't exist anymore since Pow now loads user's environment variables properly for Zsh users.*
+
 I ran into a problem when I tried to access my projects using Pow. Pow was getting the request but crashes due to gems missing or bad ruby version.
 
 Pow doesn't know anything about rbenv so you need to tell him about the right PATH to be able to use rbenv.
