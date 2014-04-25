@@ -144,7 +144,7 @@ guard 'livereload' do
 endwr
 
 guard 'coffeescript', :input => 'content/coffeescripts', :output => 'content/javascripts'
-{% endhighlight}
+{% endhighlight %}
 
 This way I always have the latest version in my browser and can modify anything on the fly.
 
@@ -246,7 +246,7 @@ end
 # Use HAML to process our layout
 # We want HTML5 doctype
 layout '*', :haml, :format => :html5
-{% endhighlight}
+{% endhighlight %}
 
 # Include helpers
 
@@ -255,7 +255,7 @@ You may need to load extra-functionalities of Nanoc or create your own one. The 
 {% highlight ruby %}
 include Nanoc3::Helpers::LinkTo
 include Nanoc3::Helpers::XMLSitemap
-{% endhighlight}
+{% endhighlight %}
 
 Pretty straightforward, I only need some link_to helper to use links creation. I also want to add a sitemap to my website. This modules will be of help.
 
