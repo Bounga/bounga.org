@@ -262,7 +262,7 @@ a.feed {
 	-o-transition: width 1s ease-out;
 }
 .post-content pre:hover {
-	overflow: visible;
+	overflow-x: auto;
   border-right: solid 1px #cccccc;
   width: 730px;
 }
