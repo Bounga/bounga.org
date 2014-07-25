@@ -5,7 +5,7 @@ include Jekyll::Filters
 
 HOST = "www.bounga.org"
 REMOTE_USER = "nico"
-REMOTE_DIRECTORY = "/var/www/bounga.org/"
+REMOTE_DIRECTORY = "/var/www/bounga/"
 
 task :default => [:build]
 
@@ -103,6 +103,6 @@ end
 desc 'Deploy site on web server'
 task :deploy => [:build] do
   puts "Sync files on Web server"
-  system("rsync -az --delete -e ssh public/ #{REMOTE_USER}@#{HOST}:#{REMOTE_DIRECTORY}")
+  system("rsync -az --no-t --no-p --delete -e ssh public/ #{REMOTE_USER}@#{HOST}:#{REMOTE_DIRECTORY}")
   puts "Deployment done!"
 end
