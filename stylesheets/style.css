@@ -253,8 +253,7 @@ a.feed {
 	display: block;
 	z-index: 9999;
 	overflow: hidden;
-	color: white;
-	background-color: #0d1a26;
+	background-color: #ffffff;
 	width: 500px;
 	transition: width 1s ease-out;
 	-moz-transition: width 1s ease-out;
