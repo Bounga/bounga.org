@@ -269,4 +269,4 @@ With Nanoc you can have a powerful and customizable website content manager up a
 
 Nanoc is really worth checking it if you need a simple yet powerful content managing system for a static website.
 
-You can go further and learn some more tricks by reading my [website source code](http://stuff.bounga.org/cavigneaux.net).
+You can go further and learn some more tricks by reading my [website source code](https://bitbucket.org/Bounga/cavigneaux.net).
