@@ -82,7 +82,7 @@ HTML
       end
     end
 
-    ratio = ((posts.length.to_f / site.posts.length.to_f) * 100).to_i
+    ratio = ((posts.length.to_f / site.posts.docs.length.to_f) * 100).to_i
     ratio = ratio + (10 - ratio % 10)
     tagcloud += "<li><a href='/tags/#{label}' class='tag#{ratio}'>#{label}</a></li> "
   end
