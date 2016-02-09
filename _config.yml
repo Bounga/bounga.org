@@ -1,11 +1,8 @@
-future: false
-lsi: false
-highlighter: pygments
 permalink: pretty
 paginate: 5
 url: http://www.bounga.org
 name: Bounga's Home
 exclude: ['README.md', 'Rakefile', 'vendor', 'Gemfile', 'Gemfile.lock']
 destination: public
-markdown: kramdown
 timezone: Europe/Paris
+gems: [jekyll-paginate]
