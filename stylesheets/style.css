@@ -244,7 +244,7 @@ a.feed {
 	border-bottom: 1px dotted #666;
 }
 .post-content pre {
-	font: 1.1em 'courier new', courier, monospace;
+	font: 1.1em Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
 	border: solid 1px #cccccc;
  	border-right: dashed 2px #cccccc;
 	margin: 1em 0;
