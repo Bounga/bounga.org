@@ -15,15 +15,14 @@ task :categories do
 
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
-  site.read_posts('')
+  site.read
 
   FileUtils.mkdir_p("categories")
 
   site.categories.each do |category, posts|
     unless File.exists?("categories/#{category}.html")
 
-      html = ''
-      html << <<-HTML
+      html = <<-HTML
 ---
 layout: default
 title: Posts under "#{category}" category
@@ -53,7 +52,7 @@ task :tags do
 
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
-  site.read_posts('')
+  site.read
 
 
   FileUtils.mkdir_p("tags")
