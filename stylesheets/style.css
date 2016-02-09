@@ -12,7 +12,7 @@ body {
 	padding: 0;
 	background: #0D1A26 url(/images/body-bg.png) repeat-x top;
 	color: #050A0F;
-	font: 62.5% "Droid Sans", "Trebuchet MS", Helvetica, sans-serif;
+	font: 62.5% Tahoma, Helvetica, sans-serif;
 }
 h1,h2, h3, h4 {
 	margin: 1em 0 0 0;
@@ -73,7 +73,7 @@ header {
 }
 header h1 {
   font-size:6.2em;
-  font-family:"Chewy", Impact, Charcoal, sans-serif;
+  font-family:Impact, Charcoal, sans-serif;
 	text-shadow: 4px 4px 4px #aaa;
   left:0px;
   width:auto;
@@ -123,13 +123,11 @@ aside {
 }
 aside h2 {
 	margin: 0;
-	font-family:"Chewy", Helvetica, sans-serif;
 	font-size:1.5em;
 	color:#336699;
 }
 aside h3 {
 	margin: 1em 0 0.5em;
-	font-family:"Chewy", Helvetica, sans-serif;
 	font-size:1.2em;
 	color:#737300;
 }
@@ -245,7 +243,7 @@ a.feed {
 	border-bottom: 1px dotted #666;
 }
 .post-content pre {
-	font: 1.1em 'Droid Sans', 'courier new', courier, monospace;
+	font: 1.1em 'courier new', courier, monospace;
 	border: solid 1px #cccccc;
  	border-right: dashed 2px #cccccc;
 	margin: 1em 0;
