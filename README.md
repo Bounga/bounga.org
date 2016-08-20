@@ -15,7 +15,7 @@ The following directories/files and their contents are under the [Creative Commo
 - *.markdown
 - *.html
 
-All other directories and files are [MIT Licensed][4] (c) 2010 Nicolas Cavigneaux.
+All other directories and files are [MIT Licensed][4] (c) 2016 Nicolas Cavigneaux.
 
 Feel free to use the HTML and CSS as you please. If you do use them, a link back to [my blog][6] would be appreciated, but is not required.
 
