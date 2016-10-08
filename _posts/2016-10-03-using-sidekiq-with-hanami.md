@@ -2,7 +2,7 @@
 layout: post
 title: Using Sidekiq with Hanami
 category: Ruby
-tags: ['ruby', hanami', sidekiq']
+tags: ['ruby', 'hanami', 'sidekiq']
 ---
 
 One of the gems I often use in my [Ruby on Rails](http://rubyonrails.org/)
