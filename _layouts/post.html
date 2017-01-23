@@ -21,15 +21,19 @@ layout: default
 
   <h3 class="comments">Comments</h3>
   <section id="comments">
-    <p><a href="{{ page.url }}#disqus_thread">View Comments</a></p>
     <div id="disqus_thread"></div>
-    <script type="text/javascript">
-      (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       dsq.src = '//bounga.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
+    <script>
+     var disqus_config = function () {
+       this.page.url = "{{ site.url }}{{ page.url }}";
+       this.page.identifier = "{{ page.id }}";
+     };
+     (function() {
+       var d = document, s = d.createElement('script');
+       s.src = '//bounga.disqus.com/embed.js';
+       s.setAttribute('data-timestamp', +new Date());
+       (d.head || d.body).appendChild(s);
+     })();
     </script>
-    <noscript>Please enable JavaScript to view the comments.</noscript>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments.</a></noscript>
   </section>
 </article>
