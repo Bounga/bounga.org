@@ -1,6 +1,6 @@
 permalink: pretty
 paginate: 5
-url: http://www.bounga.org
+url: https://www.bounga.org
 name: Bounga's Home
 exclude: ['README.md', 'Rakefile', 'vendor', 'Gemfile', 'Gemfile.lock']
 destination: public
