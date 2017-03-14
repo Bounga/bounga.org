@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Chef - Setup remote server seamlessly
 category: unix
 tags: ['unix', 'system', 'admin', 'automation']

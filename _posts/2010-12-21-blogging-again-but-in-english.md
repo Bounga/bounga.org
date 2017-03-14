@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Blogging again… in English
 category: misc
 tags: ['blog', 'jekyll', 'english', 'synbioz']
 ---
 
-I'm back again to blog about things I like. You know what I'll be talking about? I'm pretty sure you know. Main topics will be about my favorite stuff when it comes to programming: **Mac OS X**, **Ruby**, **Rails**, **MooTools** and **Objective C**. 
+I'm back again to blog about things I like. You know what I'll be talking about? I'm pretty sure you know. Main topics will be about my favorite stuff when it comes to programming: **Mac OS X**, **Ruby**, **Rails**, **MooTools** and **Objective C**.
 
 Goodbye French. Hello English!
 ==============================
@@ -27,12 +26,12 @@ All my blog posts will be written using [Markdown](http://en.wikipedia.org/wiki/
 
 I've made some tweaks on Jekyll to do things that are not available by default. The main changes are :
 
-- generation of post category pages  
+- generation of post category pages
 - generation of post tag pages
 - archive page
 - posts ATOM feed
 - sitemap
-  
+
 All the complicated processes are handled by a [Rakefile](http://rake.rubyforge.org/) I wrote. This Rakefile is used to:
 
 - build category pages

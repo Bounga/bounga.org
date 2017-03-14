@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Default stack for Ruby projects
 category: ruby
 tags: ['ruby', 'project', 'stack', 'tests', 'documentation', 'API', 'webapp', 'GUI', 'mercurial', 'rvm']
@@ -7,7 +6,7 @@ tags: ['ruby', 'project', 'stack', 'tests', 'documentation', 'API', 'webapp', 'G
 
 Having a clear and well-defined default stack when you start a new project is a good thing — it will have an impact on your productivity and happiness. I'll tell you which is mine and why. Your default stack may (should) vary regarding your project type. It's my case so I'll start by showing you common tools I use then we'll see what are the other tools dedicated to specific kind of projects.
 
-The first thing I do when I start a new project is to create a project directory. I `cd` in then I setup my common tools. 
+The first thing I do when I start a new project is to create a project directory. I `cd` in then I setup my common tools.
 
 Common tools
 ============
@@ -61,7 +60,7 @@ Enabling it in your code is easy as :
 require 'simplecov'
 SimpleCov.start
 {% endhighlight %}
-  
+
 SimpleCov can be use with any test framework and will output nice formatted HTML pages.
 
 YARD
@@ -83,7 +82,7 @@ Rake / Thor
 
 Most of the things you do when you're not effectively coding can be automated. That's why I like to have a Rakefile for project specific tasks or / and a Thorfile for system-wide tasks.
 
-[Rake](http://rake.rubyforge.org/ "Rake -- Ruby Make") is a simple ruby build program with capabilities similar to make. It can create tasks, dependencies, … 
+[Rake](http://rake.rubyforge.org/ "Rake -- Ruby Make") is a simple ruby build program with capabilities similar to make. It can create tasks, dependencies, …
 
 [Thor](https://github.com/wycats/thor) is an efficient tool for building self-documenting command line utilities. It simplifies parsing of command line options, banners writing, and can be used as an alternative to Rake. The syntax is Rake-like, so it should be familiar to most Rake users. Thor can define local and system-wide tasks.
 

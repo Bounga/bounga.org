@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Running a JSON API with Rack and mruby on a Raspberry Pi
 category: raspberry
 tags: ['ruby', 'rack', 'API']

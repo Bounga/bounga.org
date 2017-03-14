@@ -1,5 +1,4 @@
 ---
-layout: post
 title: How to solve Textmate slowdown on focus
 category: tips
 tags: ['textmate', 'slowdown', 'project']

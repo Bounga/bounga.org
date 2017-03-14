@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Setting up Rails, Nginx and Puma
 category: unix
 tags: ['unix', 'system', 'admin', 'hosting']

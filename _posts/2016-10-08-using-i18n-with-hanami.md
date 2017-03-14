@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Using I18n with Hanami
 category: Ruby
 tags: ['ruby', 'hanami', 'i18n']
@@ -10,7 +9,7 @@ in [Hanami](http://hanamirb.org/). Another gem I often use
 is [I18n](https://github.com/svenfuchs/i18n) since it allows to localize
 strings and keep them separated from my code by using a dedicated file. This way my
 code don't have any hard-coded string but rather uses something that looks like
-a keys / values store. 
+a keys / values store.
 
 ## Setup ##
 

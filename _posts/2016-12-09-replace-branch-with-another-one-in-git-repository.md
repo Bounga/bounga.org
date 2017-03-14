@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Replace a branch with another one in a Git repository
 category: Tips
 tags: ['git']

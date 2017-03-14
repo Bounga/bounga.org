@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Downgrading RubyMotion
 category: tips
 tags: ['rubymotion']

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: How to use infinity in your code
 category: ruby
 tags: ['ruby', 'tips']
@@ -31,4 +30,4 @@ but you can't use `Infinity` directly since it doesn't seems to be a class, an o
 NameError: uninitialized constant Object::Infinity
 {% endhighlight %}
 
-Using this trick, our `#each` implementation will loop forever. It's definitively not the right solution to loop over elements but I thought it was interesting to know this little Ruby secret. 
+Using this trick, our `#each` implementation will loop forever. It's definitively not the right solution to loop over elements but I thought it was interesting to know this little Ruby secret.

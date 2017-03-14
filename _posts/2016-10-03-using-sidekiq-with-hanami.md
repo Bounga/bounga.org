@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Using Sidekiq with Hanami
 category: Ruby
 tags: ['ruby', 'hanami', 'sidekiq']

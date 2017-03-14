@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Encapsulate a code block in an object
 category: ruby
 tags: ['ruby', 'tips']
@@ -8,7 +7,7 @@ tags: ['ruby', 'tips']
 [Ruby](http://www.ruby-lang.org) is a very dynamic language which allows you to do things like encapsulate a piece of code in an object. This is a really powerful capability you can use to write flexible and reusable code. This concept is based on *Proc* objects.
 
 This post will show you how you can use *Proc*s to simplify your code, avoid duplication and makes it more dynamic.
-    
+
 How to create a Proc?
 =====================
 

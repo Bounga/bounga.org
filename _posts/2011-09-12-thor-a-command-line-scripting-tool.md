@@ -1,17 +1,16 @@
 ---
-layout: post
 title: Thor - a command-line scripting tool
 category: ruby
 tags: ['ruby', 'gem', 'command-line', 'admin', 'shell', 'thor', 'rake']
 ---
 
-[Thor](https://github.com/wycats/thor) is a simple and efficient tool for building self-documenting command line utilities. I'm a shell guy, I use a terminal everyday and most of my job is done in my [favorite text editor](http://macromates.com) or in a terminal. To be effective I need to have a suitable text editor and the ability to automate most of the things I do in the terminal. 
+[Thor](https://github.com/wycats/thor) is a simple and efficient tool for building self-documenting command line utilities. I'm a shell guy, I use a terminal everyday and most of my job is done in my [favorite text editor](http://macromates.com) or in a terminal. To be effective I need to have a suitable text editor and the ability to automate most of the things I do in the terminal.
 
 Here comes Thor. Thor will help you to script your common actions and command-lines. Rather than having five commands to do a recurent job why just not having one?!
 
 Thor will remove the pain of having to handle command-line options parsing, documentation and tasks dependencies. You'll be able to use Thor on a given project or even system-wide. It's a system-wide [Rake](http://rake.rubyforge.org/) on steroïds which ease command-line options parsing, inline help generation, file-system manipulation, templating, …
 
-This post will show you how you can use Thor to simplify your daily tasks. We'll see all Thor capabilities and show some simple but real-world use cases. 
+This post will show you how you can use Thor to simplify your daily tasks. We'll see all Thor capabilities and show some simple but real-world use cases.
 
 Last but not least, Thor was written by [Yehuda Katz](http://yehudakatz.com/).
 
@@ -201,18 +200,18 @@ You can now use tasks defined in your Thorfile from anywhere!
 
 # Real-world example
 
-Let's say your working on a Rails app you often need to clone and setup maybe because there's a lot of developers on the project or maybe you need multiple repos to test things … 
+Let's say your working on a Rails app you often need to clone and setup maybe because there's a lot of developers on the project or maybe you need multiple repos to test things …
 
 {% highlight ruby %}
 class Setup < Thor
   desc "prepare", "copy configuration files"
   method_options :force => :boolean
-  
+
   def prepare(file = "*.dist")
     Dir["config/#{name}"].each do |source|
       destination = "config/#{File.basename(source, ".dist")}"
       FileUtils.rm(destination) if options[:force] && File.exist?(destination)
-      
+
       if File.exist?(destination)
         puts "Skipping #{destination} because it already exists"
       else
@@ -224,7 +223,7 @@ class Setup < Thor
 
   desc "populate", "generate records"
   method_options :count => 10
-  
+
   def populate
     require File.expand_path('config/environment.rb')
     options[:count].times do |num|

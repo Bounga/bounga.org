@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Effectivly manage a static website with Nanoc
 category: ruby
 tags: ['ruby', 'web', 'tools', 'shell', 'static', 'nanoc']

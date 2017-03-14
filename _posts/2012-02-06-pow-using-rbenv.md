@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Pow using rbenv
 category: ruby
 tags: ['ruby', 'webserver', 'pow', 'rbenv']

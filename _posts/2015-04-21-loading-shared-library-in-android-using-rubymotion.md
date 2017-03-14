@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Loading shared library in Android using RubyMotion
 category: ruby
 tags: ['rubymotion', 'android']

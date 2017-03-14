@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Capistrano using Mercurial (a.k.a Hg)
 category: ruby
 tags: ['ruby', 'web', 'tools', 'capistrano']

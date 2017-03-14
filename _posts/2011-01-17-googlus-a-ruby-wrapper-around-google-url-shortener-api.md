@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Googlus - A Ruby wrapper around Google URL Shortener API
 category: lib
 tags: ['ruby', 'google', 'url', 'shortener', 'api', 'wrapper', 'lib', 'software', 'oss', 'release']
@@ -44,7 +43,7 @@ $ googlus -s http://www.bounga.org # Shorten URL
 $ googlus -e http://goo.gl/arOIJ   # Expand short URL
 $ googlus -a http://goo.gl/arOIJ   # Get analytics for short URL
 {% endhighlight %}
-  
+
 Other
 =====
 
