@@ -1,7 +1,7 @@
 ---
 title: Pow using rbenv
-category: ruby
-tags: ['ruby', 'webserver', 'pow', 'rbenv']
+category: Ruby
+tags: ['OS X']
 ---
 
 Couple weeks ago I switched from [RVM](http://beginrescueend.com/) to [rbenv](https://github.com/sstephenson/rbenv) because I think it's a cleaner and faster way to handle Ruby versions. It is more respecful of the Unix philosophy.

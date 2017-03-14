@@ -1,7 +1,7 @@
 ---
 title: Effectivly manage a static website with Nanoc
-category: ruby
-tags: ['ruby', 'web', 'tools', 'shell', 'static', 'nanoc']
+category: Ruby
+tags: ['web']
 ---
 
 Couple months ago I was working on my [personal website](http:/www.cavigneaux.net) that I decided to re-write from scratch since most of the existing things had to be scratched off and replaced.

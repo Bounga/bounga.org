@@ -1,7 +1,7 @@
 ---
 title: Thor - a command-line scripting tool
-category: ruby
-tags: ['ruby', 'gem', 'command-line', 'admin', 'shell', 'thor', 'rake']
+category: Ruby
+tags: ['cli']
 ---
 
 [Thor](https://github.com/wycats/thor) is a simple and efficient tool for building self-documenting command line utilities. I'm a shell guy, I use a terminal everyday and most of my job is done in my [favorite text editor](http://macromates.com) or in a terminal. To be effective I need to have a suitable text editor and the ability to automate most of the things I do in the terminal.

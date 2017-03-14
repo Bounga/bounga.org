@@ -1,7 +1,7 @@
 ---
 title: How to solve Textmate slowdown on focus
-category: tips
-tags: ['textmate', 'slowdown', 'project']
+category: Tips
+tags: ['editor']
 ---
 
 On Friday I was having slowdowns on [Textmate](http://macromates.com/) focus. I never had this problem before and this "bug" was only happening on this given project. I had to wait for about 5 to 10 seconds to be able to use my text editor. Really annoying when you need to switch beetween your editor and a web browser to test your code hundred times a day.

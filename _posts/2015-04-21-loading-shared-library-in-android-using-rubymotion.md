@@ -1,6 +1,6 @@
 ---
 title: Loading shared library in Android using RubyMotion
-category: ruby
+category: Ruby
 tags: ['rubymotion', 'android']
 ---
 

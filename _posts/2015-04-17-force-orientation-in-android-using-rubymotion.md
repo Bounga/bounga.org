@@ -1,6 +1,6 @@
 ---
 title: Force screen orientation in Android using RubyMotion
-category: ruby
+category: Ruby
 tags: ['rubymotion', 'android']
 ---
 

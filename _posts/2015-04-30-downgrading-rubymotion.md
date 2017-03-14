@@ -1,6 +1,6 @@
 ---
 title: Downgrading RubyMotion
-category: tips
+category: Tips
 tags: ['rubymotion']
 ---
 

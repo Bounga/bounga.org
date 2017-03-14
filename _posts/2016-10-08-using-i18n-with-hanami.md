@@ -1,7 +1,7 @@
 ---
 title: Using I18n with Hanami
 category: Ruby
-tags: ['ruby', 'hanami', 'i18n']
+tags: ['hanami']
 ---
 
 Last week I wrote about settings up [Sikekiq](http://sidekiq.org/)

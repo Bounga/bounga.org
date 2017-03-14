@@ -1,7 +1,7 @@
 ---
 title: Setting up Rails, Nginx and Puma
-category: unix
-tags: ['unix', 'system', 'admin', 'hosting']
+category: Unix
+tags: ['sysadmin']
 ---
 
 When [Rails 4](http://edgeguides.rubyonrails.org/4_0_release_notes.html) was released it offered a bunch new features and deprecations :

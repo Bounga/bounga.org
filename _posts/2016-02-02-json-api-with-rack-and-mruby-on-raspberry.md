@@ -1,7 +1,7 @@
 ---
 title: Running a JSON API with Rack and mruby on a Raspberry Pi
-category: raspberry
-tags: ['ruby', 'rack', 'API']
+category: Raspberry
+tags: ['api']
 ---
 
 I recently got a [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) so I wanted to experiment with home automation, surveillance system, movement detection and stuff like that.
