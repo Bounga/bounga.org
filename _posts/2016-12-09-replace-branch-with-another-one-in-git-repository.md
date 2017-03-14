@@ -2,6 +2,8 @@
 title: Replace a branch with another one in a Git repository
 category: Tips
 tags: ['git']
+header:
+  overlay_image: /assets/images/headers/tips.jpg
 ---
 
 Last week a [workmate](https://twitter.com/akarzim) did me a pull

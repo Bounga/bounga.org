@@ -2,6 +2,9 @@
 title: Loading shared library in Android using RubyMotion
 category: Ruby
 tags: ['rubymotion', 'android']
+header:
+  overlay_image: /assets/images/headers/rubymotion.jpg
+excerpt: "Using a vendor library may require to load a shared library. Here's how to do it in RubyMotion."
 ---
 
 # Problem

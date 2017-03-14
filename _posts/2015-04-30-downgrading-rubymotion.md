@@ -2,9 +2,11 @@
 title: Downgrading RubyMotion
 category: Tips
 tags: ['rubymotion']
+header:
+  overlay_image: /assets/images/headers/rubymotion.jpg
 ---
 
-Sometimes after upgrading [RubyMotion][] I face some bugs introduced in the new release. It can be bugs which can easily be workaround or really annoying bugs that will be pain in the ass in a daily work.
+Sometimes after upgrading [RubyMotion][] I face some bugs introduced in the new release. It can be bugs which can easily be worked around or really annoying bugs that will be pain in the ass in a daily work.
 
 In this case most of the times I choose to downgrade RubyMotion rather than waiting for a new release or patching it locally.
 

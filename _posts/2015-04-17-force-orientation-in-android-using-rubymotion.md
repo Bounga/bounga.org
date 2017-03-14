@@ -2,6 +2,8 @@
 title: Force screen orientation in Android using RubyMotion
 category: Ruby
 tags: ['rubymotion', 'android']
+header:
+  overlay_image: /assets/images/headers/rubymotion.jpg
 ---
 
 As you may know since a couple of month you can write native [Android](https://www.android.com) apps using [RubyMotion](http://www.rubymotion.com).

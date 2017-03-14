@@ -2,6 +2,8 @@
 title: Effectivly manage a static website with Nanoc
 category: Ruby
 tags: ['web']
+header:
+  overlay_image: /assets/images/headers/webdev.jpg
 ---
 
 Couple months ago I was working on my [personal website](http:/www.cavigneaux.net) that I decided to re-write from scratch since most of the existing things had to be scratched off and replaced.

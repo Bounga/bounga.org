@@ -2,6 +2,9 @@
 title: Using Sidekiq with Hanami
 category: Ruby
 tags: ['hanami']
+header:
+  overlay_image: /assets/images/headers/hanami.png
+  overlay_color: "#a88482"
 ---
 
 One of the gems I often use in my [Ruby on Rails](http://rubyonrails.org/)

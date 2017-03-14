@@ -2,6 +2,9 @@
 title: Using I18n with Hanami
 category: Ruby
 tags: ['hanami']
+header:
+  overlay_image: /assets/images/headers/hanami.png
+  overlay_color: "#a88482"
 ---
 
 Last week I wrote about settings up [Sikekiq](http://sidekiq.org/)

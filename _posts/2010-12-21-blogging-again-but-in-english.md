@@ -1,7 +1,9 @@
 ---
 title: Blogging again… in English
 category: Misc
-tags: ['blog', 'jekyll']
+header:
+  overlay_image: /assets/images/headers/misc.jpg
+  overlay_filter: 0.5
 ---
 
 I'm back again to blog about things I like. You know what I'll be talking about? I'm pretty sure you know. Main topics will be about my favorite stuff when it comes to programming: **Mac OS X**, **Ruby**, **Rails**, **MooTools** and **Objective C**.

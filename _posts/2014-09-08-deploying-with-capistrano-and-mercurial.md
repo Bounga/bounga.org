@@ -2,6 +2,8 @@
 title: Capistrano using Mercurial (a.k.a Hg)
 category: Unix
 tags: ['sysadmin']
+header:
+  overlay_image: /assets/images/headers/unix.jpg
 ---
 
 As you may notice I'm a big fan of [Mercurial](http://mercurial.selenic.com) which is a great [DSCM](http://en.wikipedia.org/wiki/Distributed_revision_control) a lot more easier to learn and use than [Git](http://git-scm.com) in my opinion.
