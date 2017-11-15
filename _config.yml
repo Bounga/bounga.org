@@ -7,6 +7,8 @@
 
 theme: minimal-mistakes-jekyll
 
+livereload: true 
+
 # Site Settings
 locale: "en-US"
 title: "Bounga's Home"
