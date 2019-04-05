@@ -255,6 +255,7 @@ begin
   exit
 rescue LoadError => e
   warn "=> Unable to load pry"
+end
 ```
 
 In my config file I ensure completion will be available, then I
@@ -269,5 +270,5 @@ Then if Pry is available I load it.
 
 IRB, and by extension Rails console, is a real gem and can help you a
 lot everyday. You really should try to take the best out of it. Maybe
-my next blog post will be the same king of tips but for Iex which is
-the same kind of tool but for [Elixir](https://elixir-lang.org)
+my next blog post will be the same kind of tips but for <kbd>IEx</kbd> which is
+the same kind of tool but for [Elixir](https://elixir-lang.org).
