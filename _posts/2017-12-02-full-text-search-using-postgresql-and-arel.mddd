@@ -1,0 +1,214 @@
+---
+title: Full text search using Postgresql and Arel
+category: Ruby
+tags: ['rails', 'postgresql']
+header:
+  overlay_image: /assets/images/headers/ruby.png
+  overlay_color: "#4D4D4D"
+excerpt: "Implementing full text search often rely on using specialized
+tools such as ElasticSearch. It's a great tool but did you know you
+can achieve a lot using PostgreSQL only?"
+---
+
+Before diving into how to use [PostgreSQL][pg] and [Arel][arel] I'd
+like to underline that you'll be able to apply what you'll read here
+to project that don't even use [Arel][arel] or [Rails][rails]. Main
+features needed are provided by [PostgreSQL][pg] itself so you can use
+it in [PHP][php], [Elixir][elixir] or whatever language / framework
+you're using.
+
+## What is full text search? ##
+
+Full Text Search provides the capability to identify natural-language
+documents that satisfy a query, and optionally to sort them by
+relevance to the query.
+
+It gives you the ability to find documents containing your query terms
+and return them ordered by their relevance.
+
+It is a more evolved search than just matching a regular expression
+for example. It would be hard with regex to find matches for derived
+words, ignore useless words or sort them by relevance.
+
+Full text search is done by pre-processing documents and index them
+efficiently to allow fast search afterward. Pre-processing consists of
+parsing documents to split it into meaningful tokens, normalize and
+store them.
+
+## Avoiding useless dependencies ##
+
+For a long time I was used to add [ElasticSearch][es] to my stack as
+soon as I add the most basic need for full text
+search. [ElasticSearch][es] is really an awesome piece of
+software. It's freaking powerful and blazing fast. If you never used
+it you can't even imagine. There's so much to say about it that I
+could write dozen of post about it.
+
+That said I'm now trying to avoid adding libs and dependencies to my
+apps whenever I can. Implementing basic to average full text search
+can be achieve without using [ElasticSearch][es].
+
+Most of my apps depends on [PostgreSQL][pg] and I try to leverage its
+features as much as possible as I told in my [i18n dedicated
+post](/ruby/2017/11/15/translating-activerecord-data-using-json-datatype/).
+
+So can I rely on [PostgreSQL][pg] to cover my basic to average needs
+when it comes to full text search? Yes! [PostgreSQL][pg] provides the
+tools to do the most common things. It has
+[dictionaries](https://www.postgresql.org/docs/current/static/textsearch-dictionaries.html)
+you can choose from to eliminate words that should not be considered
+in a search (*stop words*). It gives the
+ability to choose the [parser used to split your document into
+tokens](https://www.postgresql.org/docs/current/static/textsearch-parsers.html)
+and how to normalize them.
+
+## Tokenizing a document ##
+
+[PostgreSQL][pg] provides two main function to tokenize a document,
+remove *stop words* then stem (basically index their position in the
+document) them.
+
+These functions are `to_tsvector` and `to_tsquery`. Be aware that
+[PostgreSQL][pg] will use your current locale by default to detect
+stop words and normalize tokens. You can provide the desired language
+as the first argument. Let's see how it works:
+
+{% highlight sql %}
+SELECT to_tsvector('english', 'You live in a dream world. You despise the outside and you fear you are the next one');
+                                   
+                                   to_tsvector                                    
+----------------------------------------------------------------------------------
+ 'despis':8 'dream':5 'fear':13 'live':2 'next':17 'one':18 'outsid':10 'world':6
+(1 row)
+
+{% endhighlight %}
+
+As you can see useful words were normalized and their positions in the
+document were indexed. "you", "in", "a", "and" and "the" were removed
+since they are not valuable in a search.
+
+## Searching for a match ##
+
+[PostgreSQL][pg] provides the `to_tsquery` to query a tokenized
+document. 
+
+Here's how to use it:
+
+{% highlight sql %}
+SELECT to_tsvector('english', 'You live in a dream world. You despise the outside and you fear you are the next one') @@ to_tsquery('english', 'feared');
+
+?column? 
+----------
+ t
+(1 row)
+{% endhighlight %}
+
+This is the simplest query you can make. We're searching for the word
+"feared" in the document or something similar. In this example it does
+match and the query returns `t` for `true`.
+
+Since it's a full text search engine we can also do a boolean search:
+
+{% highlight sql %}
+SELECT to_tsvector('english', 'You live in a dream world. You despise
+the outside and you fear you are the next one') @@
+to_tsquery('english', 'feared & despise');
+
+ ?column? 
+----------
+ t
+(1 row)
+{% endhighlight %}
+
+That nice, it seems like we have a real full text search engine right
+in our [PostgreSQL][pg]. But how do we search in tables and columns
+data?
+
+## Searching in tables ##
+
+If you're reading this I bet that your goal is not to ask your
+[PostgreSQL][pg] to search for text in static content you provide to
+it.
+
+Let see how we can do full text search in data of our tables. In this
+example we'll pretend that we have a `posts` table and that we want to
+match every record that has a given string (or something similar) in
+its `title` or `body` columns:
+
+{% highlight sql %}
+select * from posts where to_tsvector(title || ' ' || body) @@ to_tsquery('musician');
+{% endhighlight %}
+
+It would return all the matching record where the body or title would
+contains "musician", "music" or something with the same root.
+
+The querying function let you search boolean expressions so you can
+use AND (&), OR (|), negation (!) and you can even add a weight on a
+word of the query (from A to D). You can read more about that in the
+[Parsing Queries section of the
+documentation](https://www.postgresql.org/docs/9.5/static/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES).
+
+You can do much more like ranking the results and highlighting matches
+but that's not the topic of this post.
+
+## What about the performance? ##
+
+That's nice, I'm trying to sell [PostgreSQL][pg] full text search
+capabilities but is it fast enough?
+
+To be fair — by default — it's not blazing fast especially when you
+add more terms to you query. Each term will add latency to your query
+time. But that's SQL and most of the time the solution is to add an
+*index*. You can drastically speed up the querying time by adding
+indexes on the columns that are used in your query.
+
+To add an index on our previous columns we'll do:
+
+{% highlight sql %}
+CREATE INDEX index_title_on_posts ON posts USING gin(to_tsvector('english', title));
+CREATE INDEX index_body_on_posts ON posts USING gin(to_tsvector('english', body));
+{% endhighlight %}
+
+By adding these indexes you'll drop considerably the query time. A
+factor of something like 2000 times! A query that was taking 2 sec on
+a large table will drop to something like 1 ms. The most term your
+query have the more you'll gain.
+
+## Using full text search through Arel ##
+
+[Arel][arel] doesn't come with built-in support for creating full text
+search related queries.
+
+That's not a big deal since it's pretty simple to create our own
+functions, nodes, operations in Arel.
+
+Will need a way to tokenize our documents by using `to_tsvector` and
+also a way to query the tokenized documents by using `to_tsquery`.
+
+{% highlight ruby %}
+description_col = arel_table[:description]
+description_vector = Arel::Nodes::NamedFunction.new('to_tsvector', ['english', description_col])
+
+quoted_query_str = Arel::Nodes.build_quoted(query_str)
+query_vector = Arel::Nodes::NamedFunction.new('to_tsquery', ['english', quoted_query_str])
+
+Arel::Nodes::InfixOperation.new('@@', description_vector,
+query_vector)
+
+ICDCode.where(···).count
+{% endhighlight %}
+
+## Resources ##
+
+- [Official PostgreSQL doc about full text
+  search](https://www.postgresql.org/docs/current/static/textsearch.html)
+- [Gem that builds named scopes that take advantage of PostgreSQL's
+  full text search](https://github.com/Casecommons/pg_search)
+- [Gem that exposes full text search capabilities from PostgreSQL, and allows you to declare full text indexes](https://github.com/textacular/textacular)
+
+[rails]: http://rubyonrails.org
+[arel]: http://www.rubydoc.info/github/rails/arel
+[pg]: https://www.postgresql.org
+[php]: http://php.net
+[elixir]: https://elixir-lang.org
+[es]: https://www.elastic.co/products/elasticsearch
