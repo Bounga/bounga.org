@@ -5,3 +5,4 @@ vendor/bundle
 .bundle/config
 .sass-cache
 .jekyll-metadata
+/.jekyll-cache
