@@ -72,7 +72,7 @@ social:
   name: # If the user or organization name differs from the site's name
   links:
     - "https://twitter.com/Bounga"
-    - "https://bitbucket.org/Bounga/"
+    - "https://github.com/Bounga"
     - "https://plus.google.com/+NicolasCavigneaux"
     - "https://www.linkedin.com/in/cavigneaux/"
 
@@ -90,13 +90,13 @@ author:
   location: "France"
   email: "nico@bounga.org"
   uri: "http://www.cavigneaux.net"
-  bitbucket: "Bounga"
+  bitbucket:
   codepen:
   dribbble:
   flickr: "bounga"
   facebook:
   foursquare:
-  github:
+  github: "Bounga"
   google_plus: "NicolasCavigneaux"
   keybase:
   instagram:
