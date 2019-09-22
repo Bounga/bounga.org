@@ -1,7 +1,7 @@
 ---
 title: Using I18n with Hanami
 category: Ruby
-tags: ['hanami']
+tags: ['hanami', 'i18n']
 header:
   overlay_image: /assets/images/headers/hanami.png
   overlay_color: "#a88482"

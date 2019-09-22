@@ -1,7 +1,7 @@
 ---
 title: Adding additional translations in Phoenix using Gettext
 category: Tips
-tags: ['phoenix', 'elixir']
+tags: ['phoenix', 'elixir', 'i18n']
 header:
   overlay_image: /assets/images/headers/tips.jpg
 excerpt: "Sometimes when you're writing a Phoenix app you want to
