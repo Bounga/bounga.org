@@ -147,7 +147,7 @@ defmodule Sequence.Server do
   end
 
   def format_status(_reason, [ _pdict, state ]) do
-    [data: [{'State', "Current state: '#{inspect state}"}]] 
+    [data: [{'State', "Current state: '#{inspect state}'"}]]
   end
 end
 ```
@@ -295,21 +295,21 @@ Now let's write a module which only purpose will be to store the
 state.
 
 ```elixir
-defmodule​ Sequence.Stash ​do​​
-  use​ Agent
+defmodule Sequence.Stash do
+  use Agent
 
-  def​ start_link(initial_value) ​do​
-    Agent.start_link(fn -> initial_value end, name: __MODULE__)​
-q  end​
+  def start_link(initial_value) do
+    Agent.start_link(fn -> initial_value end, name: __MODULE__)
+  end
 
-  def​ get() ​do​
-    Agent.get(__MODULE__, &(&1))​
-  end​
+  def get() do
+    Agent.get(__MODULE__, & &1)
+  end
 
-  def​ update(new_value) ​do​
-    Agent.update(__MODULE__, new_value)
-  end​
-end​
+  def update(new_value) do
+    Agent.update(__MODULE__, fn _state -> new_value end)
+  end
+end
 ```
 
 [Agents](https://elixir-lang.org/getting-started/mix-otp/agent.html)
@@ -419,32 +419,32 @@ defmodule Sequence.Server do
   def start_link(stash_pid) do
     {:ok, _pid} = GenServer.start_link(__MODULE__, stash_pid, name: __MODULE__)
   end
-  
+
   def next_number do
     GenServer.call(__MODULE__, :next_number)
   end
-  
+
   def increment_number(delta) do
     GenServer.cast(__MODULE__, {:increment_number, delta})
   end
 
   # GenServer implementation
 
-  def init(stash_pid) do
-    current_number = Sequence.Stash.get_value(stash_pid)
-    { :ok, {current_number, stash_pid} }
+  def init(_args) do
+    current_number = Sequence.Stash.get()
+    {:ok, current_number}
   end
-  
-  def handle_call(:next_number, _from, {current_number, stash_pid}) do 
-    { :reply, current_number, {current_number + 1, stash_pid} }
+
+  def handle_call(:next_number, _from, current_number) do
+    {:reply, current_number, current_number + 1}
   end
-  
-  def handle_cast({:increment_number, delta}, {current_number, stash_pid}) do
-    { :noreply, {current_number + delta, stash_pid}}
+
+  def handle_cast({:increment_number, delta}, current_number) do
+    {:noreply, current_number + delta}
   end
-  
-  def terminate(_reason, {current_number, stash_pid}) do
-    Sequence.Stash.save_value(stash_pid, current_number)
+
+  def terminate(_reason, current_number) do
+    Sequence.Stash.update(current_number)
   end
 end
 ```
