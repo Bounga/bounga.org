@@ -491,3 +491,7 @@ previous state.
 We use an Agent here to store the value in memory but the exact same
 technique could be used to store and retrieve value using a database, a
 file on the disk, a web service, …
+
+I made [the code
+available](https://github.com/Bounga/genserver_with_supervision_tree_and_state_recovery)
+if you want to read or play with it.
