@@ -13,11 +13,12 @@ livereload: true
 locale: "en-US"
 title: "Bounga's Home"
 title_separator: "-"
+subtitle: "Having fun with code"
 name: "Nicolas Cavigneaux"
 description: "Thoughts about Ruby, Rails, Hanami, Elixir, Phoenix, Javascript and Unix."
 url: "https://www.bounga.org"
 baseurl: # the subpath of your site, e.g. "/blog"
-repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: "Bounga/bounga.org"
 teaser: "/assets/images/default-teaser.jpg"
 # breadcrumbs: false # true, false (default)
 words_per_minute: 200
@@ -32,22 +33,15 @@ comments:
     appid:
     num_posts: # 5 (default)
     colorscheme: # "light" (default), "dark"
-staticman:
-  allowedFields: ['name', 'email', 'url', 'message']
-  branch: "master"
-  commitMessage: "New comment."
-  filename: comment-{@timestamp}
-  format: "yml"
-  moderation: true
-  path: "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
-  requiredFields: ['name', 'email', 'message']
-  transforms:
-    email: "md5"
-  generatedFields:
-    date:
-      type: "date"
-      options:
-        format: "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+  utterances:
+    theme: # "github-light" (default), "github-dark"
+    issue_term: # "pathname" (default)
+  staticman:
+    branch: # "master"
+    endpoint: # "https://{your Staticman v3 API}/v3/entry/github/"
+reCaptcha:
+  siteKey:
+  secret:
 atom_feed:
   path: # blank (default) uses feed.xml
 
@@ -73,7 +67,6 @@ social:
   links:
     - "https://twitter.com/Bounga"
     - "https://github.com/Bounga"
-    - "https://plus.google.com/+NicolasCavigneaux"
     - "https://www.linkedin.com/in/cavigneaux/"
 
 # Analytics
@@ -81,39 +74,41 @@ analytics:
   provider: "google-universal" # false (default), "google", "google-universal", "custom"
   google:
     tracking_id: "UA-915737-1"
+    anonymize_ip: # true, false (default)
 
 # Site Author
 author:
   name: "Nicolas Cavigneaux"
   avatar: "/assets/images/bounga.jpg"
-  bio: "Software Architect, Ruby and Elixir addict specialized in web apps and security issues."
+  bio: "I write code and I love doing it using **Ruby**, **Elixir** and **Emacs**."
   location: "France"
   email: "nico@bounga.org"
-  uri: "http://www.cavigneaux.net"
-  bitbucket:
-  codepen:
-  dribbble:
-  flickr: "bounga"
-  facebook:
-  foursquare:
-  github: "Bounga"
-  google_plus: "NicolasCavigneaux"
-  keybase:
-  instagram:
-  lastfm:
-  linkedin:
-  pinterest:
-  soundcloud: "bounga-1"
-  stackoverflow: # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
-  steam:
-  tumblr:
-  twitter: "bounga"
-  vine:
-  weibo:
-  xing:
-  youtube: # "https://youtube.com/c/MichaelRoseDesign"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/Bounga"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Bounga"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.cavigneaux.net"
 
-
+# Site Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/cavigneaux/"
+    - label: "StackOverflow"
+      icon: "fab fa-fw fa-stack-overflow"
+      url: "https://stackoverflow.com/users/7103932/bounga"
+    - label: "Flickr"
+      icon: "fab fa-fw fa-flickr"
+      url: "https://www.flickr.com/photos/bounga/"
+    - label: "SoundCloud"
+      icon: "fab fa-fw fa-soundcloud"
+      url: "https://soundcloud.com/bounga-1"
 # Reading Files
 include:
   - .htaccess
@@ -139,6 +134,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - package-lock.json
   - Rakefile
   - README.md
   - tmp
@@ -180,13 +176,13 @@ paginate_path: /page:num/
 timezone: "Europe/Paris" # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-include-cache
   - jekyll-archives
-  - jemoji
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -194,7 +190,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
+  - jekyll-include-cache
 
 # Archives
 #  Type
