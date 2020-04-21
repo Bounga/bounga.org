@@ -4,6 +4,7 @@ category: Tips
 tags: ['emacs', 'ssh']
 header:
   overlay_image: /assets/images/headers/tips.jpg
+  teaser: /assets/images/teasers/emacs.png
 excerpt: "You're experiencing excessive lag and timeouts when using Tramp
 on remote servers through SSH. Here is the solution to one of the most
 common cause."

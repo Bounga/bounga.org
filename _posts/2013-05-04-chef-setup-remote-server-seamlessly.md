@@ -4,6 +4,7 @@ category: Unix
 tags: ['sysadmin']
 header:
   overlay_image: /assets/images/headers/unix.jpg
+  teaser: /assets/images/teasers/chef_setup_remote_server.jpg
 ---
 
 [Chef](http://wiki.opscode.com/display/chef/Home) is a [Ruby Gem](https://rubygems.org/gems/chef) which aims to help sys admins in the process of **managing servers**.

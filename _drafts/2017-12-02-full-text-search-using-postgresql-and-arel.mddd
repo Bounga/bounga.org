@@ -3,8 +3,8 @@ title: Full text search using Postgresql and Arel
 category: Ruby
 tags: ['rails', 'postgresql']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
 excerpt: "Implementing full text search often rely on using specialized
 tools such as ElasticSearch. It's a great tool but did you know you
 can achieve a lot using PostgreSQL only?"

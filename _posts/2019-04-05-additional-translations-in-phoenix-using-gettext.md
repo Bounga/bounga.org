@@ -4,6 +4,7 @@ category: Tips
 tags: ['phoenix', 'elixir', 'i18n']
 header:
   overlay_image: /assets/images/headers/tips.jpg
+  teaser: /assets/images/teasers/phoenix.png
 excerpt: "Sometimes when you're writing a Phoenix app you want to
 split your translation files to avoid having one big file with
 everything inside but rather having one per domain. That's what we're

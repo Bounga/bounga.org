@@ -4,6 +4,7 @@ category: Tips
 tags: ['rubymotion']
 header:
   overlay_image: /assets/images/headers/rubymotion.jpg
+  teaser: /assets/images/teasers/rubymotion.png
 ---
 
 Sometimes after upgrading [RubyMotion][] I face some bugs introduced in the new release. It can be bugs which can easily be worked around or really annoying bugs that will be pain in the ass in a daily work.

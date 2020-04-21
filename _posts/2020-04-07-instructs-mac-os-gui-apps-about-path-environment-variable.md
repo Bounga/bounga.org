@@ -4,6 +4,7 @@ category: Tips
 tags: ['tips', 'Mac OS']
 header:
     overlay_image: /assets/images/headers/tips.jpg
+    teaser: /assets/images/teasers/set_macos_path.jpg
 excerpt: "A lot of people struggles to find how to instruct their Mac
     OS GUI apps to be aware of their PATH environment variable.
     Sometimes when you install GUI apps they try to use a binary which

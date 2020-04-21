@@ -4,6 +4,7 @@ category: Ruby
 tags: ['rubymotion', 'android']
 header:
   overlay_image: /assets/images/headers/rubymotion.jpg
+  teaser: /assets/images/teasers/force-orientation-android.jpg
 ---
 
 As you may know since a couple of month you can write native [Android](https://www.android.com) apps using [RubyMotion](http://www.rubymotion.com).

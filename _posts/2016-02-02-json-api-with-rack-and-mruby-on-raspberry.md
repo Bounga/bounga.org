@@ -4,6 +4,7 @@ category: Raspberry
 tags: ['api']
 header:
   overlay_image: /assets/images/headers/raspberry.jpg
+  teaser: /assets/images/teasers/raspberry.jpg
 ---
 
 I recently got a [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) so I wanted to experiment with home automation, surveillance system, movement detection and stuff like that.

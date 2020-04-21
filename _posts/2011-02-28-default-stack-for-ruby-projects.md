@@ -3,8 +3,9 @@ title: Default stack for Ruby projects
 category: Ruby
 tags: ['best practices']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
+  teaser: /assets/images/teasers/ruby_default_stack.jpg
 ---
 
 Having a clear and well-defined default stack when you start a new project is a good thing — it will have an impact on your productivity and happiness. I'll tell you which is mine and why. Your default stack may (should) vary regarding your project type. It's my case so I'll start by showing you common tools I use then we'll see what are the other tools dedicated to specific kind of projects.

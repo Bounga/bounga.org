@@ -4,6 +4,7 @@ category: Tips
 tags: ['git']
 header:
   overlay_image: /assets/images/headers/tips.jpg
+  teaser: /assets/images/teasers/git_replace_branch.jpg
 ---
 
 Last week a [workmate](https://twitter.com/akarzim) did me a pull

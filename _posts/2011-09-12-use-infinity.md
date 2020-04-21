@@ -3,8 +3,9 @@ title: How to use infinity in your code
 category: Ruby
 tags: ['best practices', 'tips']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
+  teaser: /assets/images/teasers/infinity_in_ruby.jpg
 ---
 
 You'll sometimes have to use the notion of infinity in your Ruby code. There isn't any way to directly use infinity in Ruby, at least none that I know of… But there's a tip to get it.

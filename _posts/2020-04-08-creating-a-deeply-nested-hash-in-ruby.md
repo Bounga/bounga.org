@@ -3,8 +3,8 @@ title: Creating a deeply nested Hash in Ruby
 category: Ruby
 tags: ['tips', 'ruby']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
 excerpt: "Sometimes you'll have to create a deeply nested hash without
     knowing how deep it can be at first. This hash should allow
     reading and setting values at any level without even having to

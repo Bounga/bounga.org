@@ -3,8 +3,8 @@ title: Ruby one-liners for file manipulations
 category: Ruby
 tags: ['tips', 'sysadmin', 'ruby']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
 excerpt: "Most people using Ruby nowdays are using it for Rails.
     They often defined themselves has 'Rails developers', not 'Ruby
     developers'. I'm an early adopter of Ruby and at the begining it

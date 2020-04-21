@@ -3,7 +3,8 @@ title: GenServer with supervision tree and state recovery after crash
 category: Elixir
 tags: ['elixir']
 header:
-    overlay_image: /assets/images/headers/elixir.png
+    overlay_image: /assets/images/headers/elixir.jpg
+    teaser: /assets/images/teasers/genserver_supervision_tree.jpg
 excerpt: "You've probably heard that in Elixir you should let processes
     crash rather than trying to catch every possible exceptions. Then,
     after a crash, you only have to get back to the latest

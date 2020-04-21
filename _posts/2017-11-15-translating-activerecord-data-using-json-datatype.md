@@ -3,8 +3,9 @@ title: Translating ActiveRecord data using JSON
 category: Ruby
 tags: ['rails', 'i18n']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
+  teaser: /assets/images/teasers/rails.png
 excerpt: "Following the mass and using de-facto libraries isn't always
 the best choice. Here are some thoughts about handling translation of
 data stored in database when using Rails."

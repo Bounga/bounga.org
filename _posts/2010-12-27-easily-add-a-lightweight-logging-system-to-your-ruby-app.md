@@ -3,8 +3,9 @@ title: Easily add a lightweight logging system to your Ruby app
 category: Ruby
 tags: ['debug', 'tips', 'logging']
 header:
-  overlay_image: /assets/images/headers/ruby.png
-  overlay_color: "#4D4D4D"
+  overlay_image: /assets/images/headers/ruby.jpg
+  overlay_filter: 0.2
+  teaser: /assets/images/teasers/ruby.jpg
 ---
 
 Sometimes it can be very useful to add verbose and silent modes to your app. This way users can easily control information level about events happening. As you can figure out, these modes are especially useful for command-line apps.
