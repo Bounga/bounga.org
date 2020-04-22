@@ -34,7 +34,7 @@ you have all you need at your disposal to handle background and
 scheduled tasks. [Erlang](https://elixir-lang.org/) was designed with
 this need in mind at core level.
 
-## Use OTP to schedule tasks ##
+# Use OTP to schedule tasks #
 
 It's really going to be a piece of cake.
 
@@ -76,7 +76,7 @@ asynchronously and so on.
 
 Let's dig into it function by function.
 
-### Initialize the server ###
+## Initialize the server ##
 
 There's one mandatory function that brings our module to life, the
 `init/1` function. Its purpose is to initialize our server state.
@@ -94,7 +94,7 @@ state}` without changing anything but before doing so we call our
 private function `schedule_work/0` to start our first scheduling count
 down. We'll take a closer look at it in a minute.
 
-### Start the server ###
+## Start the server ##
 
 The `start_link/1` function encapsulate the logic responsible for
 starting our `GenServer`.
@@ -119,7 +119,7 @@ really care since we're not going to use it.
 
 The two functions left represent the heart of our module.
 
-### Handle asynchronous calls to our module ###
+## Handle asynchronous calls to our module ##
 
 One of the most notable behavior of the `GenServer` is its ability to
 communicate synchronously and asynchronously. It's basically a
@@ -151,7 +151,7 @@ again.
 
 `handle_info/2` ends by returning a tuple with an unchanged state.
 
-### Schedule the task ###
+## Schedule the task ##
 
 The last function is a private one, it is not meant to be called
 from outside of our `MyApp.Scheduler` module.
@@ -180,7 +180,7 @@ processing by calling another module function then it asks
 
 Really simple and handy right?
 
-## Avoid scheduling drifting ##
+# Avoid scheduling drifting #
 
 There's one gotcha in the previous example.
 
@@ -206,7 +206,7 @@ will be set right away. Then the real work will happen. Two hours
 later another computing will be done either the previous one is over
 or not.
 
-## Start the scheduler using the supervision tree ##
+# Start the scheduler using the supervision tree #
 
 All we have left to do is to add our module to the supervision tree so
 it will be started along with the application. In a typical mix
