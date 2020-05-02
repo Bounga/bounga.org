@@ -3,10 +3,11 @@ title: Setting up multiple IMAP and SMTP accounts in Gnus
 category: Tips
 tags: ['emacs', 'gnus']
 header:
-overlay_image: /assets/images/headers/tips.png
+  overlay_image: /assets/images/headers/tips.jpg
+  teaser: /assets/images/teasers/multiple_accounts_in_gnus.jpg
 excerpt: "When it comes to Emacs and emails reading, one of the most
-    popular option is Gnus. Let's see how to configure it for
-    multiple IMAP / SMTP servers without using any external tool."
+popular option is Gnus. Let's see how to configure it for
+multiple IMAP / SMTP servers without using any external tool."
 ---
 
 Emacs users tend to like to do everything in it as I do. A frequent
@@ -23,7 +24,7 @@ This is about using multiple SMTP servers seamlessly for sending
 emails. I always read you have to use external tools such as
 [MSMTP](https://marlam.de/msmtp/) with specific configuration to make
 it acts as a proxy between your software and your multiple remote
-SMTP. Some other adice you to use an homemade function to play with
+SMTP. Some other advice you to use an homemade function to play with
 message fields and hook it via `message-send-hook`.
 
 Some will even tell you to hack your `/etc/hosts`.
@@ -46,7 +47,7 @@ it's tightly related to how we're going to setup SMTP.
 
 So let's take a look at the "select-method" definitions. This is where
 we tells Gnus about our IMAP servers, their local name and how they
-mus behave:
+must behave:
 
 ```elisp
 (setq gnus-select-method '(nnnil nil))
@@ -77,9 +78,9 @@ be known locally as `home` and the second one as `work`.
 Both are using Gmail so we have to find a way to distinguish these to
 account to provide credentials.
 
-The standard Unix way to share credentials across softwares is to them
-in `~/.authinfo` file. In my case I use `~/.authinfo.gpg` so my
-credential are encrypted with GPG and no one but me can read it.
+The standard Unix way to share credentials across softwares is to
+store them in `~/.authinfo` file. In my case I use `~/.authinfo.gpg`
+so my credential are encrypted with GPG and no one but me can read it.
 
 Here is the content of `~/.authinfo.gpg`:
 
@@ -146,11 +147,12 @@ machine smtp.gmail.com login work@gmail.com password my_other_password port 587
 ```
 
 By searching the server name / username Gnus will be able to know
-which is the right credential to use.
+the right credential to use.
 
-It basically enable multi SMTP accounts in Gnus without bothering with
+It basically enables multi SMTP accounts in Gnus without bothering with
 [any](https://www.emacswiki.org/emacs/MultipleSMTPAccounts) of [these](https://www.emacswiki.org/emacs/MultipleSMTPAccounts) [techniques](https://www.emacswiki.org/emacs/GnusMSMTP).
 
 Moral of the story, when it comes to Emacs you should always read the
-official doc first since it really contains useful info for pretty
-much everything.
+official doc first since most of the time you'll find the info you
+need.
+
