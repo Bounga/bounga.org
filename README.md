@@ -3,11 +3,11 @@ www.bounga.org
 
 This is the [hacks and thoughts][6] of [Nicolas Cavigneaux][1], powered by [Jekyll][2]. I'm using a Rakefile to generate this site and especially it's "dynamic" parts.
 
-The source is hosted on [BitBucket][5].
+The source is hosted on [Github][5].
 
 ## License
 
-The following directories/files and their contents are under the [Creative Commons BY-NC-SA 4.0][3] (c) 2010 Nicolas Cavigneaux.
+The following directories/files and their contents are under the [Creative Commons BY-NC-SA 4.0][3] © 2020 Nicolas Cavigneaux.
 
 - _posts/
 - _drafts/
@@ -15,7 +15,7 @@ The following directories/files and their contents are under the [Creative Commo
 - *.markdown
 - *.html
 
-All other directories and files are [MIT Licensed][4] (c) 2016 Nicolas Cavigneaux.
+All other directories and files are [MIT Licensed][4] © 2020 Nicolas Cavigneaux.
 
 Feel free to use the HTML and CSS as you please. If you do use them, a link back to [my blog][6] would be appreciated, but is not required.
 
