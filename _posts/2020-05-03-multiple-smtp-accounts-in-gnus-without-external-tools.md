@@ -1,16 +1,16 @@
 ---
 title: Setting up multiple IMAP and SMTP accounts in Gnus
 category: Tips
-tags: ['emacs', 'gnus']
+tags: ['Emacs', 'gnus']
 header:
   overlay_image: /assets/images/headers/tips.jpg
   teaser: /assets/images/teasers/multiple_accounts_in_gnus.jpg
-excerpt: "When it comes to Emacs and emails reading, one of the most
-popular option is Gnus. Let's see how to configure it for
-multiple IMAP / SMTP servers without using any external tool."
+excerpt: “When it comes to Emacs and emails reading, one of the most
+popular options is Gnus. Let's see how to configure it for
+multiple IMAP / SMTP servers without using any external tool.”
 ---
 
-Emacs users tend to like to do everything in it as I do. A frequent
+Emacs' users tend to like to do everything in it as I do. A frequent
 desire is to be able to read emails in it. A popular option is
 [Gnus](https://gnus.org).
 
@@ -24,7 +24,7 @@ This is about using multiple SMTP servers seamlessly for sending
 emails. I always read you have to use external tools such as
 [MSMTP](https://marlam.de/msmtp/) with specific configuration to make
 it acts as a proxy between your software and your multiple remote
-SMTP. Some other advice you to use an homemade function to play with
+SMTP. Some other advice you to use a homemade function to play with
 message fields and hook it via `message-send-hook`.
 
 Some will even tell you to hack your `/etc/hosts`.
@@ -32,7 +32,7 @@ Some will even tell you to hack your `/etc/hosts`.
 But hey, Gnus is there since the nineties. Someone must have think of
 a solution and it must be built-in!
 
-I stopped searching blog posts and stackoverflow and read the [manual
+I stopped searching blog posts and Stack Overflow and read the [manual
 entry](https://www.gnu.org/software/emacs/manual/html_node/message/Mail-Variables.html)
 which clearly states that you **can** set up a complex workflow using
 multiple SMTP servers.
@@ -45,8 +45,8 @@ which is a way to instruct Gnus of how you want to prepare your email
 Before digging into it I'd like to explain my IMAP settings because
 it's tightly related to how we're going to setup SMTP.
 
-So let's take a look at the "select-method" definitions. This is where
-we tells Gnus about our IMAP servers, their local name and how they
+So let's take a look at the “select-method” definitions. This is where
+we tell Gnus about our IMAP servers, their local name and how they
 must behave:
 
 ```elisp
@@ -75,10 +75,10 @@ prefer to set all the accounts in the same place
 In this variable I have declared two IMAP servers. The first one will
 be known locally as `home` and the second one as `work`.
 
-Both are using Gmail so we have to find a way to distinguish these to
+Both are using Gmail, so we have to find a way to distinguish these to
 account to provide credentials.
 
-The standard Unix way to share credentials across softwares is to
+The standard Unix way to share credentials across software is to
 store them in `~/.authinfo` file. In my case I use `~/.authinfo.gpg`
 so my credential are encrypted with GPG and no one but me can read it.
 
@@ -155,4 +155,3 @@ It basically enables multi SMTP accounts in Gnus without bothering with
 Moral of the story, when it comes to Emacs you should always read the
 official doc first since most of the time you'll find the info you
 need.
-
