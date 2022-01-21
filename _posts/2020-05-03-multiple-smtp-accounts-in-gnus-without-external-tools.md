@@ -1,13 +1,13 @@
 ---
 title: Setting up multiple IMAP and SMTP accounts in Gnus
 category: Tips
-tags: ['Emacs', 'gnus']
+tags: ["Emacs", "gnus"]
 header:
   overlay_image: /assets/images/headers/tips.jpg
   teaser: /assets/images/teasers/multiple_accounts_in_gnus.jpg
 excerpt: “When it comes to Emacs and emails reading, one of the most
-popular options is Gnus. Let's see how to configure it for
-multiple IMAP / SMTP servers without using any external tool.”
+  popular options is Gnus. Let's see how to configure it for
+  multiple IMAP / SMTP servers without using any external tool.”
 ---
 
 Emacs' users tend to like to do everything in it as I do. A frequent
